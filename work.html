@@ -21,9 +21,11 @@
 <header class="nav">
   <a class="nav__brand" href="index.html"><span class="nav__seal">錦</span><span class="nav__name">當沖撐壓孔明錦囊</span></a>
   <nav class="nav__links" id="navLinks" aria-label="主選單">
+    <a href="guide.html" data-nav="guide">第一次看</a>
     <a href="work.html" data-nav="work">作品</a>
     <a href="concept.html" data-nav="concept">設計發想</a>
     <a href="usage.html" data-nav="usage">實用情況</a>
+    <a href="glossary.html" data-nav="glossary">名詞</a>
     <a href="play.html" data-nav="play" class="nav__cta">拆錦囊 ▸</a>
   </nav>
   <button class="nav__burger" id="navBurger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
@@ -36,9 +38,9 @@
     <div class="wrap">
       <p class="eyebrow">壹 ・ 作品頁面</p>
       <h1>一把尺，<br>量出今天的每一階。</h1>
-      <p class="lede">「當沖撐壓孔明錦囊」是一套台股當沖的關鍵價位精算系統。輸入一個代號，它去抓行情、算出從漲停到跌停的整座價格天梯，標出三個最值得等待的伏擊位，然後把開高、開平、開低三個劇本連同進場、停損、目標一起寫好。桌面視窗、文字筆記、命令列、AI 助理技能，四種用法共用同一顆引擎。</p>
+      <p class="lede">「當沖撐壓孔明錦囊」是一套台股<span class="term" data-term="daytrade">當沖</span>的關鍵價位精算系統。輸入一個代號，它去抓行情、算出從漲停到跌停的整座價格<span class="term" data-term="ladder">天梯</span>，標出三個最值得等待的<span class="term" data-term="ambush">伏擊位</span>，然後把開高、開平、開低三個<span class="term" data-term="scenario">劇本</span>連同進場、停損、目標一起寫好。你在桌面視窗看到的，就是天梯、撐壓圖、劇本，和一份可以一鍵複製到手機的純文字筆記。</p>
       <div class="chips" style="margin-top:22px">
-        <span class="chip">Python 3</span><span class="chip">pandas ・ NumPy</span><span class="chip">Matplotlib</span><span class="chip">Tkinter 桌面視窗</span><span class="chip">證交所 MIS 即時行情</span><span class="chip">期交所 API</span><span class="chip">Yahoo Finance 歷史 K 線</span><span class="chip">免安裝 exe</span><span class="chip">AI 助理 SKILL</span>
+        <span class="chip">Python 3</span><span class="chip">pandas ・ NumPy</span><span class="chip">Matplotlib</span><span class="chip">Tkinter 桌面視窗</span><span class="chip">證交所即時行情</span><span class="chip">期交所即時報價</span><span class="chip">Yahoo Finance 歷史 K 線</span>
       </div>
     </div>
   </section>
@@ -46,9 +48,9 @@
   <!-- 畫面導覽 -->
   <section class="sec sec--paper paper-tex">
     <div class="wrap">
-      <p class="eyebrow reveal">畫面導覽 ・ 2026-10-21 盤中實拍</p>
+      <p class="eyebrow reveal">畫面導覽 ・ 2026-10-21 盤中</p>
       <h2 class="sec-title reveal">六步，<em>走一遍</em>桌面版。</h2>
-      <p class="lede reveal" data-delay="1">以下全是今天盤中由程式直接擷取的真實畫面，沒有修圖。朱紅框是每一步要看的地方，會自動輪播，也可以點右側步驟或用鍵盤左右鍵。</p>
+      <p class="lede reveal" data-delay="1">以下是桌面版的真實畫面。朱紅框是每一步要看的地方，會自動輪播，也可以點右側步驟或用鍵盤左右鍵。如果你是第一次看，建議先到<a href="guide.html" style="color:var(--cinnabar);font-weight:700;text-decoration:underline">「第一次看」</a>，那裡會一塊一塊解釋畫面。</p>
       <div class="tour reveal" data-tour data-dur="5200" tabindex="0" aria-label="畫面導覽" style="margin-top:36px">
         <div class="tour__stage">
           <img src="assets/img/shot_01_main_2330.webp" alt="主畫面：決策彩帶、價格天梯與日 K 撐壓圖" data-step="main" class="is-on" width="1920" height="1129">
@@ -92,7 +94,7 @@
         <!-- Tick -->
         <div class="card reveal" data-delay="1">
           <h3 style="font-size:20px">一、跳動檔位對齊</h3>
-          <p class="muted" style="font-size:14.5px">證交所的六級檔位規則。每一個算出來的價位都先對齊到檔位，才會掛上天梯。</p>
+          <p class="muted" style="font-size:14.5px">證交所的六級<span class="term" data-term="tick">檔位規則</span>。每一個算出來的價位都先對齊到檔位，才會掛上天梯。</p>
           <figure class="figure">
             <svg viewBox="0 0 320 200" role="img" aria-label="六級跳動檔位階梯圖">
               <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#cfc6b3">
@@ -161,34 +163,29 @@
   <!-- 架構 -->
   <section class="sec sec--ink" style="border-top:1px solid var(--line-ink)">
     <div class="wrap">
-      <p class="eyebrow reveal">資料來源與架構</p>
-      <h2 class="sec-title reveal">一顆引擎，<em>四種出口</em>。</h2>
-      <div class="flow reveal" data-delay="1" style="margin-top:32px">
-        <div class="node"><b>行情來源</b><span>證交所 MIS 即時行情<br>期交所 getQuoteList<br>Yahoo Finance 歷史 K 線<br>2,888 檔名稱對照庫</span></div>
-        <div class="arrow">→</div>
-        <div class="node" style="border-color:var(--gold)"><b>精算引擎</b><span>檔位對齊 ・ CDP / 樞紐<br>均線扣抵 ・ J-Box<br>量能錨點 ・ 共振評分<br>天梯 ・ 伏擊位 ・ 劇本</span></div>
-        <div class="arrow">→</div>
-        <div class="node"><b>四種出口</b><span>桌面視窗（Tkinter）<br>雙欄文字筆記（一鍵複製）<br>命令列 CLI<br>AI 助理 SKILL</span></div>
+      <p class="eyebrow reveal">它會替你做的六件事</p>
+      <h2 class="sec-title reveal">輸入一個代號，<em>它替你做六件事</em>。</h2>
+      <p class="lede reveal" data-delay="1">以台積電 2330 今天為例。你只做第一步：輸入代號，然後等幾秒。</p>
+      <div class="grid grid--3" style="margin-top:32px">
+        <div class="card feature reveal" data-delay="1"><span class="feature__num">01</span><h3>抓行情</h3><p>自動抓最近六個月的日 K、30 分 K、5 分 K，和現在的即時價。你什麼都不用準備。</p></div>
+        <div class="card feature reveal" data-delay="2"><span class="feature__num">02</span><h3>對齊檔位</h3><p>把所有價位對齊到<span class="term" data-term="tick">跳動檔位</span>。台積電一檔 5 元，所以你看到的都是 2420、2425 這種真的能掛的價格。</p></div>
+        <div class="card feature reveal" data-delay="3"><span class="feature__num">03</span><h3>算出今天的線</h3><p>用昨天的高低收算 <span class="term" data-term="cdp">CDP 五價</span>與<span class="term" data-term="pivot">樞紐</span>，再加上<span class="term" data-term="ma">均線</span>方向、<span class="term" data-term="jbox">J-Box</span> 箱體、<span class="term" data-term="volume">大量區</span>。今天 CDP 2422.5、箱頂 2445、箱底 2390。</p></div>
+        <div class="card feature reveal" data-delay="1"><span class="feature__num">04</span><h3>疊成天梯</h3><p>同一個價位有幾個理由，就疊幾分。從漲停 2660 到跌停 2180 排成 19 階，理由越多的階越亮。</p></div>
+        <div class="card feature reveal" data-delay="2"><span class="feature__num">05</span><h3>挑三個位置</h3><p>理由最多的三階變成<span class="term" data-term="ambush">伏擊位</span>：2440、2400、2420。其他的階可以看，但不建議出手。</p></div>
+        <div class="card feature reveal" data-delay="3"><span class="feature__num">06</span><h3>寫好三個劇本</h3><p>開高、開平、開低各一封：條件、進場、<span class="term" data-term="stop">停損</span>、目標都填好，連「假跌破」的例外都寫了。</p></div>
       </div>
-      <div class="grid grid--2" style="margin-top:36px">
-        <div class="card reveal" data-delay="1">
-          <h3 style="font-size:20px">技術規格</h3>
-          <div class="table-wrap"><table class="table">
-            <tr><th>語言</th><td>Python 3（pandas、NumPy、Matplotlib、Tkinter、yfinance）</td></tr>
-            <tr><th>程式規模</th><td>精算引擎約 2,600 行、桌面程式約 1,350 行、期指引擎約 1,100 行</td></tr>
-            <tr><th>支援標的</th><td>台股上市上櫃個股、台指期 TXF、加權 TSE、櫃買 OTC</td></tr>
-            <tr><th>時間週期</th><td>日 K、30 分 K、5 分 K</td></tr>
-            <tr><th>發布形式</th><td>免安裝 exe、Python 原始碼、AI 助理技能包</td></tr>
-          </table></div>
-        </div>
-        <div class="card reveal" data-delay="2">
-          <h3 style="font-size:20px">三種用法</h3>
-          <div style="display:flex;flex-direction:column;gap:14px;font-size:15px">
-            <div><b style="color:var(--gold-2)">雙擊就開</b><br><span class="muted">免安裝 exe，沒有 Python 的電腦也能用，雙擊就是上面那個畫面。</span></div>
-            <div><b style="color:var(--gold-2)">一行指令</b><br><span class="muted"><code class="mono" style="font-size:13.5px">python ladder_engine.py 2330</code>，直接印出雙欄作戰筆記。</span></div>
-            <div><b style="color:var(--gold-2)">跟 AI 說一句話</b><br><span class="muted">附帶的 SKILL 技能包讓 Claude、Cursor 這類 AI 助理聽得懂「幫我精算 2313 的當沖天梯」，自動呼叫引擎並回報。</span></div>
-          </div>
-        </div>
+      <div class="flow reveal" data-delay="1" style="margin-top:36px">
+        <div class="node"><b>行情從哪裡來</b><span>證交所即時行情<br>期交所即時報價<br>Yahoo Finance 歷史 K 線<br>2,888 檔名稱對照</span></div>
+        <div class="arrow">→</div>
+        <div class="node" style="border-color:var(--gold)"><b>引擎在背後算</b><span>對齊檔位 ・ CDP / 樞紐<br>均線扣抵 ・ J-Box<br>大量區 ・ 共振評分</span></div>
+        <div class="arrow">→</div>
+        <div class="node"><b>你看到的畫面</b><span>四張決策卡 ・ 天梯<br>撐壓圖 ・ 三個劇本<br>可複製的作戰筆記</span></div>
+      </div>
+      <div class="card reveal" data-delay="2" style="margin-top:24px">
+        <div class="table-wrap"><table class="table">
+          <tr><th>支援標的</th><td>台股上市上櫃個股、台指期 TXF、加權 TSE、櫃買 OTC</td></tr>
+          <tr><th>時間週期</th><td>日 K、30 分 K、5 分 K</td></tr>
+        </table></div>
       </div>
       <div class="reveal" style="margin-top:48px;text-align:center">
         <a class="btn btn--cinnabar" href="play.html">自己拆一次錦囊</a>
@@ -200,12 +197,13 @@
 <footer class="footer">
   <div class="wrap">
     <div><b>當沖撐壓孔明錦囊</b> ・ Peter Chung ・ 2026</div>
-    <nav><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="play.html">拆錦囊</a></nav>
+    <nav><a href="guide.html">第一次看</a><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="glossary.html">名詞</a><a href="play.html">拆錦囊</a></nav>
     <p class="disclaimer">本作品為量化點位與技術結構的精算工具與作品展示，所有數據為 2026-10-21 盤中快照，非任何形式的投資建議。</p>
   </div>
 </footer>
 
 <script src="assets/data/ladders.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/terms.js"></script>
 </body>
 </html>

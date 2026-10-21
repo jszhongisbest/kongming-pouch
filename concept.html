@@ -33,9 +33,11 @@
 <header class="nav">
   <a class="nav__brand" href="index.html"><span class="nav__seal">錦</span><span class="nav__name">當沖撐壓孔明錦囊</span></a>
   <nav class="nav__links" id="navLinks" aria-label="主選單">
+    <a href="guide.html" data-nav="guide">第一次看</a>
     <a href="work.html" data-nav="work">作品</a>
     <a href="concept.html" data-nav="concept">設計發想</a>
     <a href="usage.html" data-nav="usage">實用情況</a>
+    <a href="glossary.html" data-nav="glossary">名詞</a>
     <a href="play.html" data-nav="play" class="nav__cta">拆錦囊 ▸</a>
   </nav>
   <button class="nav__burger" id="navBurger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
@@ -62,6 +64,14 @@
           <p>市面上的看盤軟體都在比誰的指標多、誰的畫面閃。但當沖真正的敵人不是資訊不夠，是盤中那幾秒鐘的慌：看到紅就想追，看到綠就想砍。</p>
           <p>錦囊這個意象，把重點從「知道什麼」搬到「什麼時候拆」。開高、開平、開低，開盤那一刻只會發生其中一種；你不需要三套都記在腦子裡，只要拆對的那一封，照著做。</p>
           <blockquote class="quote">好獵人懂得蹲。點位沒到，把手綁起來。<small>引擎內建的錦囊妙計</small></blockquote>
+          <div class="card" style="padding:18px 22px">
+            <div class="eyebrow" style="margin-bottom:10px">三個名字的由來</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+              <div><b style="color:var(--cinnabar)"><span class="term" data-term="ladder">天梯</span></b>：把今天所有重要的價位從漲停排到跌停，一階一階列好，每一階寫上它為什麼重要。像一張樓層表。</div>
+              <div><b style="color:var(--cinnabar)"><span class="term" data-term="ambush">伏擊位</span></b>：天梯上理由疊得最多的三階。獵人不追獵物，獵人在獵物一定會經過的地方等。</div>
+              <div><b style="color:var(--cinnabar)">錦囊</b>：開盤前封好的三個<span class="term" data-term="scenario">劇本</span>。開盤只會發生一種情況，只拆一封。</div>
+            </div>
+          </div>
         </div>
         <figure class="figure figure--card">
           <svg viewBox="0 0 420 260" role="img" aria-label="三個錦囊分別對應開高、開平、開低三種開盤情境">
@@ -83,7 +93,7 @@
         <div>
           <div class="act__k">第二幕</div>
           <h3>痛點：每天早上的那張紙</h3>
-          <p>在有這套系統之前，盤前準備是一張手寫的紙：抄昨高昨低、按計算機算 CDP 五價、對著圖把均線和整理箱的位置畫上去，再憑感覺標幾個「這裡可以做」。二十分鐘起跳，而且常算錯一檔。</p>
+          <p>在有這套系統之前，盤前準備是一張手寫的紙：抄<span class="term" data-term="yhyl">昨高昨低</span>、按計算機算 <span class="term" data-term="cdp">CDP 五價</span>、對著圖把<span class="term" data-term="ma">均線</span>和<span class="term" data-term="jbox">整理箱</span>的位置畫上去，再憑感覺標幾個「這裡可以做」。二十分鐘起跳，而且常算錯一檔。</p>
           <p>更糟的是，紙上的點位沒有「等級」。昨高、整數關、月線、前高疊在同一個價位附近時，紙上只看到一堆線，看不出哪一個才是真正的邊界。</p>
           <p>所以第一個設計決定是：所有東西先對齊到「檔位」這把尺上，再把疊在一起的理由數出來。疊得越多，階梯越亮。</p>
         </div>
@@ -175,22 +185,18 @@
     </div>
   </section>
 
-  <!-- 尾聲：網站本身 -->
+  <!-- 尾聲：給第一次看的人 -->
   <section class="sec sec--ink">
     <div class="wrap">
-      <p class="eyebrow reveal">尾聲</p>
-      <h2 class="sec-title reveal">這個網站，<em>也是作品的一部分</em>。</h2>
-      <p class="lede reveal" data-delay="1">金融軟體的視覺慣例是藍黑霓虹、閃爍的紅綠、密密麻麻的數字。但這套系統的核心動作是「等」，不是「刺激」。所以展示它的網站，選了墨、宣紙、朱砂、金箔、青瓷，標題用襯線字，數字用等寬字。朱砂是壓力，青瓷是支撐，金箔只給分水嶺和三個伏擊位。顏色不裝飾，顏色就是資料。</p>
-      <div class="swatches reveal" data-delay="2" style="margin-top:28px">
-        <div class="swatch"><i style="background:#14110f"></i><b>墨</b><span>#14110F</span></div>
-        <div class="swatch"><i style="background:#f3ede0"></i><b>宣紙</b><span>#F3EDE0</span></div>
-        <div class="swatch"><i style="background:#c8372d"></i><b>朱砂 ・ 壓力</b><span>#C8372D</span></div>
-        <div class="swatch"><i style="background:#c9a227"></i><b>金箔 ・ 分水嶺</b><span>#C9A227</span></div>
-        <div class="swatch"><i style="background:#5e8c7a"></i><b>青瓷 ・ 支撐</b><span>#5E8C7A</span></div>
+      <p class="eyebrow reveal">給第一次看的人</p>
+      <h2 class="sec-title reveal">如果只記<em>三句話</em>。</h2>
+      <div class="grid grid--3" style="margin-top:32px">
+        <div class="card feature reveal" data-delay="1"><span class="feature__num">一</span><h3>開盤前算好，開盤只拆一封。</h3><p>所有的計算、所有的劇本都在 9:00 以前完成。開盤之後你只需要確認：今天是 A、B 還是 C。</p></div>
+        <div class="card feature reveal" data-delay="2"><span class="feature__num">二</span><h3>只在三個位置出手，沒到就等。</h3><p>天梯有十幾階，但今天只有三階值得你動手。價格在中間晃的時候，把手綁起來。</p></div>
+        <div class="card feature reveal" data-delay="3"><span class="feature__num">三</span><h3>每一步都有停損，錯了就走。</h3><p>系統不預測方向，所以每個劇本都先寫好「錯了在哪裡離開」。少賺不會死，大賠才會。</p></div>
       </div>
-      <p class="muted reveal" style="margin-top:22px;font-size:14px">天梯的三個識別色都跑過色覺模擬與對比度檢查（紅綠色盲、藍黃色盲、正常視覺的可分辨距離，以及與底色的 3:1 對比），並且每一階都有文字標籤，不靠顏色單獨傳達意義。</p>
       <div class="reveal" style="margin-top:40px;display:flex;gap:14px;flex-wrap:wrap">
-        <a class="btn btn--gold" href="usage.html">看目前實用情況</a>
+        <a class="btn btn--gold" href="guide.html">從「第一次看」開始</a>
         <a class="btn btn--ghost" href="play.html">去拆錦囊</a>
       </div>
     </div>
@@ -200,12 +206,13 @@
 <footer class="footer">
   <div class="wrap">
     <div><b>當沖撐壓孔明錦囊</b> ・ Peter Chung ・ 2026</div>
-    <nav><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="play.html">拆錦囊</a></nav>
+    <nav><a href="guide.html">第一次看</a><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="glossary.html">名詞</a><a href="play.html">拆錦囊</a></nav>
     <p class="disclaimer">本作品為量化點位與技術結構的精算工具與作品展示，所有數據為 2026-10-21 盤中快照，非任何形式的投資建議。</p>
   </div>
 </footer>
 
 <script src="assets/data/ladders.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/terms.js"></script>
 </body>
 </html>

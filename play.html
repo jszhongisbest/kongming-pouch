@@ -36,9 +36,11 @@
 <header class="nav">
   <a class="nav__brand" href="index.html"><span class="nav__seal">錦</span><span class="nav__name">當沖撐壓孔明錦囊</span></a>
   <nav class="nav__links" id="navLinks" aria-label="主選單">
+    <a href="guide.html" data-nav="guide">第一次看</a>
     <a href="work.html" data-nav="work">作品</a>
     <a href="concept.html" data-nav="concept">設計發想</a>
     <a href="usage.html" data-nav="usage">實用情況</a>
+    <a href="glossary.html" data-nav="glossary">名詞</a>
     <a href="play.html" data-nav="play" class="nav__cta">拆錦囊 ▸</a>
   </nav>
   <button class="nav__burger" id="navBurger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
@@ -51,7 +53,7 @@
     <div class="wrap">
       <p class="eyebrow">肆 ・ 互動體驗</p>
       <h1>自己拖一下，<br>看今天落在哪個劇本。</h1>
-      <p class="lede">下面所有數字都是 2026-10-21 盤中由引擎實算的結果。選一檔標的，拖動「現價」，網頁會告訴你此刻該拆哪個錦囊、離哪個伏擊位還有幾檔。</p>
+      <p class="lede">下面所有數字都是 2026-10-21 盤中由引擎實算的結果。第一次玩，先按右邊的「帶我走一遍」，它會自動把現價帶到三個<span class="term" data-term="ambush">伏擊位</span>，每一站告訴你該做什麼。然後換你自己拖，網頁會告訴你此刻該拆哪個錦囊、離哪個伏擊位還有幾檔。</p>
       <div class="seg" id="symSeg" role="group" aria-label="選擇標的" style="margin-top:18px">
         <button data-sym="2330" aria-pressed="true">台積電 2330</button>
         <button data-sym="2313" aria-pressed="false">華通 2313</button>
@@ -101,6 +103,7 @@
       </div>
       <div class="panel" style="position:sticky;top:calc(var(--nav-h) + 16px)">
         <h3>拖動現價 <span id="slTick"></span></h3>
+        <button class="btn btn--gold btn--sm" id="walkBtn" style="margin:-4px 0 14px">▶ 帶我走一遍</button>
         <div class="big-price"><span id="roPrice">—</span><small id="roPct"></small></div>
         <input type="range" class="slider" id="priceSlider" min="0" max="1" step="1" value="0" aria-label="現價">
         <div class="slider-scale"><span id="slMin"></span><span id="slMax"></span></div>
@@ -111,6 +114,11 @@
           <button class="chip" data-jump="yh" style="cursor:pointer">昨高</button>
           <button class="chip" data-jump="ref" style="cursor:pointer">平盤</button>
           <button class="chip" data-jump="yl" style="cursor:pointer">昨低</button>
+        </div>
+        <div class="walk" id="walk" aria-live="polite">
+          <div class="walk__step" id="walkStep"></div>
+          <p class="walk__text" id="walkText"></p>
+          <div class="walk__btns"><button class="btn btn--gold btn--sm" id="walkNext">下一步 ›</button><button class="btn btn--ghost btn--sm" id="walkStop" style="color:var(--paper)">我自己拖</button></div>
         </div>
         <div style="margin-top:20px">
           <span class="zone" id="roZone"></span>
@@ -232,7 +240,7 @@
 <footer class="footer">
   <div class="wrap">
     <div><b>當沖撐壓孔明錦囊</b> ・ Peter Chung ・ 2026</div>
-    <nav><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="play.html">拆錦囊</a></nav>
+    <nav><a href="guide.html">第一次看</a><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="glossary.html">名詞</a><a href="play.html">拆錦囊</a></nav>
     <p class="disclaimer">本作品為量化點位與技術結構的精算工具與作品展示，所有數據為 2026-10-21 盤中快照，非任何形式的投資建議。</p>
   </div>
 </footer>
@@ -240,5 +248,6 @@
 <script src="assets/data/ladders.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/play.js"></script>
+<script src="assets/js/terms.js"></script>
 </body>
 </html>

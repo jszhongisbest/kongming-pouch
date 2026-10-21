@@ -133,11 +133,63 @@
   function render() {
     const d = KM.data(state.sym);
     if (!d) return;
+    walkStop();
     renderHeader(d);
     KM.renderLadder($("#playLadder"), d, { onView: false, delay: 50, maxTags: 3 });
     renderSlider(d);
     renderPouches(d);
     fillCalc(d);
+  }
+
+  /* ---------- 帶我走一遍 ---------- */
+  let walkTimer = null, walkIdx = -1;
+  function walkSteps(d) {
+    const t = KM.tick(d.ref_close, d.market_type);
+    const f = (v) => KM.fmt(v, d.market_type);
+    const T = d.top3_ambush;
+    return [
+      { v: d.ref_close, text: "先從平盤 " + f(d.ref_close) + " 開始。這是昨天的收盤價，也是今天的分水嶺（伏擊 Top3）。價格在這附近晃的時候，什麼都不用做。" },
+      { v: T[0].price, text: "往上看，" + f(T[0].price) + " 是今天的上方獵殺位（Top1）。價格衝到這裡如果漲不動、留下長上影線，就是做空或多單停利的位置；若帶量站上 " + f(T[0].price + 2 * t) + " 就放棄。" },
+      { v: T[1].price, text: "往下看，" + f(T[1].price) + " 是下方黃金吸籌位（Top2）。跌到這裡量縮、出現下影線站穩，就是做多的位置；帶量跌破 " + f(T[1].price - 2 * t) + " 就不接刀。" },
+      { v: d.yesterday_high + t, text: "如果開盤直接越過昨高 " + f(d.yesterday_high) + "，拆劇本 A：不追，等它回踩昨高不破再上車，跌回平盤就停損。" },
+      { v: d.yesterday_low - t, text: "如果開盤跌破昨低 " + f(d.yesterday_low) + "，拆劇本 C：不接刀，等反彈到昨低附近漲不上去再偏空，站回昨低上方兩檔就認賠。" },
+      { v: d.ref_close, text: "走完了。整套系統只有一句話：價格沒到這三個位置，就把手綁起來。現在換你自己拖拖看。", end: true }
+    ];
+  }
+  function tween(from, to, ms, onUpdate, onDone) {
+    if (ms <= 0) { onUpdate(to); onDone && onDone(); return; }
+    const t0 = performance.now();
+    const step = (t) => {
+      const k = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - k, 3);
+      onUpdate(from + (to - from) * e);
+      if (k < 1) requestAnimationFrame(step); else onDone && onDone();
+    };
+    requestAnimationFrame(step);
+  }
+  function walkGo(i) {
+    const d = KM.data(state.sym);
+    const steps = walkSteps(d);
+    clearTimeout(walkTimer);
+    if (i >= steps.length) { walkStop(); return; }
+    walkIdx = i;
+    const s = steps[i];
+    const box = $("#walk");
+    box.classList.add("is-on");
+    $("#walkStep").textContent = "帶我走一遍 ・ " + (i + 1) + " / " + steps.length;
+    $("#walkText").textContent = s.text;
+    $("#walkNext").textContent = s.end ? "結束" : "下一步 ›";
+    const sl = $("#priceSlider");
+    const tick = KM.tick(d.ref_close, d.market_type);
+    const from = parseFloat(sl.value);
+    const to = Math.max(d.limit_down, Math.min(d.limit_up, s.v));
+    tween(from, to, KM.reduceMotion ? 0 : 750, (v) => {
+      const q = Math.round(v / tick) * tick;
+      sl.value = q; state.price = q; readout(d);
+    }, () => { if (!s.end) walkTimer = setTimeout(() => walkGo(i + 1), 5200); });
+  }
+  function walkStop() {
+    clearTimeout(walkTimer); walkIdx = -1;
+    const box = $("#walk"); if (box) box.classList.remove("is-on");
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -149,7 +201,13 @@
         render();
       });
     });
-    $("#priceSlider").addEventListener("input", (e) => { state.price = parseFloat(e.target.value); readout(KM.data(state.sym)); });
+    $("#priceSlider").addEventListener("input", (e) => { clearTimeout(walkTimer); state.price = parseFloat(e.target.value); readout(KM.data(state.sym)); });
+    const wb = $("#walkBtn");
+    if (wb) {
+      wb.addEventListener("click", () => { walkGo(0); $("#walk").scrollIntoView({ block: "nearest", behavior: KM.reduceMotion ? "auto" : "smooth" }); });
+      $("#walkNext").addEventListener("click", () => walkGo(walkIdx + 1));
+      $("#walkStop").addEventListener("click", walkStop);
+    }
     document.querySelectorAll("[data-jump]").forEach((b) => b.addEventListener("click", () => {
       const d = KM.data(state.sym);
       const map = { ref: d.ref_close, yh: d.yesterday_high, yl: d.yesterday_low, t1: d.top3_ambush[0].price, t2: d.top3_ambush[1].price, t3: d.top3_ambush[2].price };

@@ -37,9 +37,11 @@
 <header class="nav">
   <a class="nav__brand" href="index.html"><span class="nav__seal">錦</span><span class="nav__name">當沖撐壓孔明錦囊</span></a>
   <nav class="nav__links" id="navLinks" aria-label="主選單">
+    <a href="guide.html" data-nav="guide">第一次看</a>
     <a href="work.html" data-nav="work">作品</a>
     <a href="concept.html" data-nav="concept">設計發想</a>
     <a href="usage.html" data-nav="usage">實用情況</a>
+    <a href="glossary.html" data-nav="glossary">名詞</a>
     <a href="play.html" data-nav="play" class="nav__cta">拆錦囊 ▸</a>
   </nav>
   <button class="nav__burger" id="navBurger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
@@ -58,10 +60,10 @@
           <span class="line"><span>開盤之前，</span></span>
           <span class="line"><span>先拆開<em>三個錦囊</em>。</span></span>
         </h1>
-        <p class="hero__sub">把一檔股票今天會遇到的每一個關鍵價位，精算到最小跳動檔位；三個伏擊位、三個劇本，開盤前就備好。你只需要在對的位置，等。</p>
+        <p class="hero__sub">把一檔股票今天會遇到的每一個關鍵價位，精算到最小跳動檔位；三個<span class="term" data-term="ambush">伏擊位</span>、三個<span class="term" data-term="scenario">劇本</span>，開盤前就備好。你只需要在對的位置，等。</p>
         <div class="hero__cta">
-          <a class="btn btn--cinnabar" href="play.html">拆開錦囊</a>
-          <a class="btn btn--ghost" href="work.html">看作品</a>
+          <a class="btn btn--cinnabar" href="guide.html">第一次看？從這裡開始</a>
+          <a class="btn btn--ghost" href="play.html">拆開錦囊</a>
         </div>
         <div class="pouches" aria-label="三個劇本">
           <div class="pouch-wrap"><svg class="pouch pouch--cinnabar"><use href="#pouch"/></svg><small>劇本 A<br>開高突破</small></div>
@@ -89,7 +91,7 @@
     <div class="wrap">
       <p class="eyebrow reveal">三十秒看懂</p>
       <h2 class="sec-title reveal">一檔股票，<em>一座天梯</em>，三個等待的位置。</h2>
-      <p class="lede reveal" data-delay="1">當沖最難的不是看對方向，而是「在哪裡出手」。這套系統把證交所的跳動檔位、CDP 五價、樞紐、均線扣抵、J-Box 整理箱、爆量換手區全部疊在同一把尺上，從漲停到跌停排成一座天梯，再從中挑出共振最強的三個點，當作今天唯一允許扣板機的位置。</p>
+      <p class="lede reveal" data-delay="1"><span class="term" data-term="daytrade">當沖</span>最難的不是看對方向，而是「在哪裡出手」。這套系統把證交所的<span class="term" data-term="tick">跳動檔位</span>、<span class="term" data-term="cdp">CDP 五價</span>、<span class="term" data-term="pivot">樞紐</span>、<span class="term" data-term="ma">均線扣抵</span>、<span class="term" data-term="jbox">J-Box 整理箱</span>、<span class="term" data-term="volume">爆量換手區</span>全部疊在同一把尺上，從漲停到跌停排成一座<span class="term" data-term="ladder">天梯</span>，再從中挑出共振最強的三個點，當作今天唯一允許扣板機的位置。看不懂的字，滑過去就有解釋。</p>
       <div class="grid grid--3" style="margin-top:40px">
         <div class="card feature reveal" data-delay="1">
           <span class="feature__num">01</span>
@@ -110,7 +112,7 @@
     </div>
   </section>
 
-  <!-- 實拍與數字 -->
+  <!-- 主畫面與數字 -->
   <section class="sec sec--ink">
     <div class="wrap">
       <div class="stats reveal">
@@ -121,7 +123,7 @@
       </div>
       <div class="reveal" style="margin-top:48px">
         <div class="window">
-          <div class="window__bar"><i></i><i></i><i></i><span>當沖撐壓孔明錦囊 ・ 桌面版 ・ 2026-10-21 11:01 實拍</span></div>
+          <div class="window__bar"><i></i><i></i><i></i><span>當沖撐壓孔明錦囊 ・ 桌面版主畫面 ・ 台積電 2330</span></div>
           <img src="assets/img/hero_app.webp" alt="桌面版主畫面：左側為台積電當沖價格天梯，右側為日 K 撐壓圖與均線" width="1500" height="940" loading="lazy">
         </div>
         <p class="muted" style="text-align:center;margin-top:14px;font-size:14px">左手天梯，右手撐壓圖。上方四張卡片是今天的決策摘要：平盤與昨高昨低、J-Box 箱體、均線扣抵預警、CDP 五價。</p>
@@ -133,12 +135,14 @@
   <section class="sec sec--paper paper-tex">
     <div class="wrap">
       <p class="eyebrow reveal">走進錦囊</p>
-      <h2 class="sec-title reveal">四個房間，<em>一次看完</em>。</h2>
-      <div class="portal reveal" data-delay="1" style="margin-top:28px">
-        <a href="work.html"><span class="portal__k">壹</span><h3>作品</h3><p>真實畫面導覽、核心運算、資料來源與架構。</p></a>
+      <h2 class="sec-title reveal">六個房間，<em>從「第一次看」開始</em>。</h2>
+      <div class="portal portal--6 reveal" data-delay="1" style="margin-top:28px">
+        <a href="guide.html" style="border-color:var(--gold)"><span class="portal__k">零</span><h3>第一次看</h3><p>十分鐘新手導讀：這是什麼、畫面怎麼讀、三個位置和三個劇本是什麼意思。</p></a>
+        <a href="work.html"><span class="portal__k">壹</span><h3>作品</h3><p>真實畫面導覽、它替你做的六件事、核心運算。</p></a>
         <a href="concept.html"><span class="portal__k">貳</span><h3>設計發想</h3><p>為什麼叫孔明錦囊？從手寫筆記到一座天梯的四幕故事。</p></a>
-        <a href="usage.html"><span class="portal__k">參</span><h3>實用情況</h3><p>2026-10-21 的驗證時間軸、三檔真實輸出與公式重算。</p></a>
-        <a href="play.html"><span class="portal__k">肆</span><h3>拆錦囊</h3><p>自己拖一下現價，看看今天落在哪個劇本、離哪個伏擊位最近。</p></a>
+        <a href="usage.html"><span class="portal__k">參</span><h3>實用情況</h3><p>一天的使用故事、2026-10-21 的驗證紀錄與三檔真實輸出。</p></a>
+        <a href="glossary.html"><span class="portal__k">肆</span><h3>名詞小辭典</h3><p>十五個名詞，每個一句白話加一個台積電的真實數字。</p></a>
+        <a href="play.html"><span class="portal__k">伍</span><h3>拆錦囊</h3><p>按「帶我走一遍」，再自己拖現價，看今天落在哪個劇本。</p></a>
       </div>
     </div>
   </section>
@@ -147,12 +151,13 @@
 <footer class="footer">
   <div class="wrap">
     <div><b>當沖撐壓孔明錦囊</b> ・ Peter Chung ・ 2026</div>
-    <nav><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="play.html">拆錦囊</a></nav>
+    <nav><a href="guide.html">第一次看</a><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="glossary.html">名詞</a><a href="play.html">拆錦囊</a></nav>
     <p class="disclaimer">本作品為量化點位與技術結構的精算工具與作品展示，所有數據為 2026-10-21 盤中快照，非任何形式的投資建議。</p>
   </div>
 </footer>
 
 <script src="assets/data/ladders.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/terms.js"></script>
 </body>
 </html>
