@@ -346,7 +346,8 @@ p { margin: 0 0 1em; }
 .stat__k { margin-top: 8px; font-size: 13.5px; letter-spacing: 0.08em; color: var(--text-on-ink-2); }
 
 /* ---------- 截圖導覽（步進器：全寬舞台＋下方步驟卡） ---------- */
-.tour { display: flex; flex-direction: column; gap: 18px; outline: none; }
+.tour { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 18px 22px; align-items: start; outline: none; }
+@media (max-width: 1100px) { .tour { grid-template-columns: 1fr; } }
 .tour:focus-visible .zstage { box-shadow: 0 0 0 3px var(--gold), var(--shadow-ink); }
 .tour__spot {
   position: absolute; border: 3px solid var(--cinnabar); border-radius: 10px; pointer-events: none;
@@ -355,14 +356,14 @@ p { margin: 0 0 1em; }
 }
 .tour__spot.is-on { opacity: 1; }
 .tour__spot .seal { position: absolute; right: -14px; top: -22px; font-size: 13px; padding: 3px 6px; background: var(--paper); transform-origin: 0 100%; transform: rotate(-6deg) scale(calc(1 / var(--s, 1))); }
-.tour__steps { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
-@media (max-width: 1100px) { .tour__steps { grid-template-columns: repeat(3, 1fr); } }
+.tour__steps { position: sticky; top: calc(var(--nav-h) + 12px); display: flex; flex-direction: column; gap: 8px; }
+@media (max-width: 1100px) { .tour__steps { position: relative; top: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; } }
 @media (max-width: 640px) {
-  .tour__steps { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: thin; }
+  .tour__steps { display: flex; flex-direction: row; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: thin; }
   .tour__step { flex: 0 0 78%; scroll-snap-align: start; }
 }
 .tour__step {
-  text-align: left; display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 14px 14px 12px; border-radius: var(--r-sm); align-items: start;
+  text-align: left; display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 12px 14px 10px; border-radius: var(--r-sm); align-items: start;
   border: 1px solid var(--line); background: transparent; color: inherit; transition: background 0.3s, border-color 0.3s;
 }
 .tour__step:hover { background: rgba(20, 17, 15, 0.04); }
@@ -370,7 +371,7 @@ p { margin: 0 0 1em; }
 .tour__step b { font-family: var(--serif); font-size: 19px; color: var(--mute-2); line-height: 1.25; }
 .tour__step.is-on b { color: var(--cinnabar); }
 .tour__step h4 { margin: 0 0 4px; font-size: 16.5px; }
-.tour__step p { margin: 0; font-size: 15px; color: var(--text-2); line-height: 1.65; }
+.tour__step p { margin: 0; font-size: 14.5px; color: var(--text-2); line-height: 1.6; }
 .tour__bar { height: 3px; background: var(--line); border-radius: 3px; overflow: hidden; margin-top: 8px; }
 .tour__bar i { display: block; height: 100%; width: 0; background: var(--cinnabar); }
 .tour__step.is-on .tour__bar i { animation: bar var(--tour-dur, 5s) linear forwards; }
@@ -550,7 +551,8 @@ input[type="range"].slider:active { cursor: grabbing; }
 .gl__ex b { color: var(--cinnabar); font-family: var(--serif); margin-right: 6px; }
 
 /* ---------- 看懂主畫面（熱點＋放大舞台） ---------- */
-.hotmap { display: flex; flex-direction: column; gap: 18px; }
+.hotmap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 18px 22px; align-items: start; }
+@media (max-width: 1100px) { .hotmap { grid-template-columns: 1fr; } }
 .hot {
   position: absolute; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; border: 2px solid #fff;
   background: var(--cinnabar); color: #fff; font: 700 13px var(--mono); display: grid; place-items: center; cursor: pointer; padding: 0;
@@ -564,18 +566,19 @@ input[type="range"].slider:active { cursor: grabbing; }
 @keyframes ring { 0% { transform: scale(0.7); opacity: 1; } 100% { transform: scale(1.45); opacity: 0; } }
 @media (max-width: 600px) { .hot { width: 24px; height: 24px; margin: -12px 0 0 -12px; font-size: 11.5px; } }
 .hotmap__panel {
-  background: #fff8ea; border: 1px solid var(--line); border-radius: var(--r); padding: 22px 26px; box-shadow: var(--shadow);
-  display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px 32px; align-items: start;
+  background: #fff8ea; border: 1px solid var(--line); border-radius: var(--r); padding: 20px 22px; box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 14px; position: sticky; top: calc(var(--nav-h) + 12px);
 }
+@media (max-width: 1100px) { .hotmap__panel { position: static; display: grid; grid-template-columns: 1.15fr 1fr; gap: 18px 32px; align-items: start; padding: 22px 26px; } }
 @media (max-width: 860px) { .hotmap__panel { grid-template-columns: 1fr; } }
 .hotmap__panel > * { min-width: 0; }
 .hotmap__panel .k { font-family: var(--mono); color: var(--cinnabar); font-size: 13px; letter-spacing: 0.12em; }
-.hotmap__panel h3 { font-size: 22px; margin: 4px 0 8px; }
-.hotmap__panel p { margin: 0; font-size: 17px; color: var(--text-2); }
+.hotmap__panel h3 { font-size: 21px; margin: 4px 0 6px; }
+.hotmap__panel p { margin: 0; font-size: 16.5px; color: var(--text-2); line-height: 1.7; }
 .hotmap__ctrl { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .hotmap__nav { display: inline-flex; gap: 6px; margin-left: auto; }
 .hotmap__nav button { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: #fff; font-size: 18px; line-height: 1; }
-.hotmap__list { position: relative; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.hotmap__list { position: relative; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
 .hotmap__list button { font-size: 13.5px; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--text-2); position: relative; overflow: hidden; white-space: nowrap; }
 .hotmap__list button.is-on { background: var(--cinnabar); color: #fff; border-color: transparent; }
 .hotmap.is-auto .hotmap__list button.is-on::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--gold); animation: bar var(--auto-dur, 7s) linear forwards; }
@@ -621,14 +624,15 @@ input[type="range"].slider:active { cursor: grabbing; }
 @media (min-width: 821px) and (max-width: 1100px) { .nav__links { gap: 14px; font-size: 14px; } .nav__brand .nav__name { font-size: 15px; } }
 
 /* ---------- 寬版容器 ---------- */
-.wrap--wide { width: min(100% - var(--gutter) * 2, 1440px); margin-inline: auto; }
+.wrap--wide { width: min(100% - var(--gutter) * 2, 1600px); margin-inline: auto; }
 
 /* ---------- 放大舞台（桌面版畫面放大到 1:1） ---------- */
 .zstage {
   position: relative; border-radius: var(--r); overflow: hidden; background: #0b1220; box-shadow: var(--shadow-ink);
   aspect-ratio: 1920 / 1129; touch-action: pan-y; user-select: none; -webkit-user-select: none; outline: none;
 }
-@media (max-width: 760px) { .zstage { aspect-ratio: auto; height: min(62vh, 560px); border-radius: 12px; } }
+@media (max-width: 1100px) { .zstage { max-height: 56vh; } }
+@media (max-width: 760px) { .zstage { aspect-ratio: auto; height: min(46vh, 420px); border-radius: 12px; } }
 .zstage:focus-visible { box-shadow: 0 0 0 3px var(--gold), var(--shadow-ink); }
 .zstage.is-zoomed { cursor: grab; }
 .zstage.is-dragging { cursor: grabbing; }
