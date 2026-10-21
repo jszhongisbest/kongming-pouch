@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>拆錦囊｜當沖撐壓孔明錦囊</title>
+  <meta name="description" content="互動體驗：拖動現價，看看今天落在哪個劇本、離哪個伏擊位最近；拆開三個錦囊讀劇本；輸入高低收即時算 CDP 五價。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="拆錦囊｜當沖撐壓孔明錦囊">
+  <meta property="og:description" content="拖動現價，看看今天落在哪個劇本、離哪個伏擊位最近。">
+  <meta property="og:image" content="https://jszhongisbest.github.io/kongming-pouch/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#14110f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="play" class="sec--ink">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pouch" viewBox="0 0 120 150">
+    <path d="M60 6v16" stroke="#c9a227" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M60 24c-16-11-34 2-18 12 16 10 34-2 18-12zm0 0c16-11 34 2 18 12-16 10-34-2-18-12z" fill="none" stroke="#c9a227" stroke-width="3"/>
+    <path d="M36 44q24-17 48 0q-5 11-24 11t-24-11z" fill="currentColor"/>
+    <path d="M60 50c-34 2-52 32-52 60 0 30 24 44 52 44s52-14 52-44c0-28-18-58-52-60z" fill="currentColor"/>
+    <path d="M36 44q24-17 48 0" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="3"/>
+    <path d="M22 118c10 18 26 26 38 26s28-8 38-26" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="6" stroke-linecap="round"/>
+    <g fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2">
+      <circle cx="42" cy="98" r="9"/><circle cx="74" cy="112" r="12"/><circle cx="82" cy="82" r="6"/><path d="M30 118q10-6 20 0" stroke-linecap="round"/>
+    </g>
+    <ellipse cx="46" cy="76" rx="12" ry="20" fill="rgba(255,255,255,.1)" transform="rotate(-18 46 76)"/>
+  </symbol>
+</svg>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html"><span class="nav__seal">錦</span><span class="nav__name">當沖撐壓孔明錦囊</span></a>
+  <nav class="nav__links" id="navLinks" aria-label="主選單">
+    <a href="work.html" data-nav="work">作品</a>
+    <a href="concept.html" data-nav="concept">設計發想</a>
+    <a href="usage.html" data-nav="usage">實用情況</a>
+    <a href="play.html" data-nav="play" class="nav__cta">拆錦囊 ▸</a>
+  </nav>
+  <button class="nav__burger" id="navBurger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+</header>
+<div class="nav-spacer"></div>
+
+<main>
+  <section class="page-head sec--ink" style="padding-bottom:24px">
+    <span class="bg-glyph" aria-hidden="true">肆</span>
+    <div class="wrap">
+      <p class="eyebrow">肆 ・ 互動體驗</p>
+      <h1>自己拖一下，<br>看今天落在哪個劇本。</h1>
+      <p class="lede">下面所有數字都是 2026-10-21 盤中由引擎實算的結果。選一檔標的，拖動「現價」，網頁會告訴你此刻該拆哪個錦囊、離哪個伏擊位還有幾檔。</p>
+      <div class="seg" id="symSeg" role="group" aria-label="選擇標的" style="margin-top:18px">
+        <button data-sym="2330" aria-pressed="true">台積電 2330</button>
+        <button data-sym="2313" aria-pressed="false">華通 2313</button>
+        <button data-sym="TXF" aria-pressed="false">台指期 TXF</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 標的概況 -->
+  <section class="sec--ink sec--tight" style="padding-top:8px">
+    <div class="wrap">
+      <div class="panel">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:flex-end">
+          <div>
+            <div class="eyebrow" style="margin-bottom:6px">今日主觀預判 ・ <span id="pDate" class="mono" style="letter-spacing:0;text-transform:none"></span></div>
+            <h2 style="font-size:clamp(26px,3.6vw,40px);margin:0"><span id="pName"></span> <span class="mono" id="pSym" style="font-size:0.6em;color:var(--mute-2);font-weight:500"></span></h2>
+          </div>
+          <div style="text-align:right">
+            <span class="zone" id="pBias"></span>
+            <div style="color:var(--gold-2);letter-spacing:0.2em;margin-top:6px" id="pStars"></div>
+          </div>
+        </div>
+        <p class="muted" style="margin:14px 0 0;font-size:15px" id="pReason"></p>
+        <div class="readout readout--4">
+          <div><div class="k">平盤（昨收）</div><div class="v mono" id="pRef"></div></div>
+          <div><div class="k">昨高</div><div class="v mono" id="pYH"></div></div>
+          <div><div class="k">昨低</div><div class="v mono" id="pYL"></div></div>
+          <div><div class="k">CDP 分水嶺</div><div class="v mono" id="pCDP"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 天梯 + 滑桿 -->
+  <section class="sec sec--ink sec--tight">
+    <div class="wrap play-grid">
+      <div class="panel">
+        <h3>價格天梯 <span>漲停 → 跌停</span></h3>
+        <div class="ladder" id="playLadder" aria-live="polite"></div>
+        <div class="legend">
+          <span><i style="background:var(--d-res)"></i>壓力</span>
+          <span><i style="background:var(--d-piv)"></i>樞紐</span>
+          <span><i style="background:var(--d-sup)"></i>支撐</span>
+          <span><i style="background:var(--gold);box-shadow:0 0 0 2px rgba(201,162,39,.4)"></i>伏擊位</span>
+          <span><i style="border:2px dashed var(--gold);background:transparent"></i>你拖到的現價</span>
+        </div>
+      </div>
+      <div class="panel" style="position:sticky;top:calc(var(--nav-h) + 16px)">
+        <h3>拖動現價 <span id="slTick"></span></h3>
+        <div class="big-price"><span id="roPrice">—</span><small id="roPct"></small></div>
+        <input type="range" class="slider" id="priceSlider" min="0" max="1" step="1" value="0" aria-label="現價">
+        <div class="slider-scale"><span id="slMin"></span><span id="slMax"></span></div>
+        <div class="chips" style="margin-top:12px">
+          <button class="chip" data-jump="t1" style="cursor:pointer">跳到伏擊 Top1</button>
+          <button class="chip" data-jump="t3" style="cursor:pointer">跳到 Top3</button>
+          <button class="chip" data-jump="t2" style="cursor:pointer">跳到 Top2</button>
+          <button class="chip" data-jump="yh" style="cursor:pointer">昨高</button>
+          <button class="chip" data-jump="ref" style="cursor:pointer">平盤</button>
+          <button class="chip" data-jump="yl" style="cursor:pointer">昨低</button>
+        </div>
+        <div style="margin-top:20px">
+          <span class="zone" id="roZone"></span>
+          <p class="muted" style="margin:10px 0 0;font-size:14.5px" id="roZoneDesc"></p>
+        </div>
+        <div class="readout">
+          <div style="grid-column:1/-1;border-color:rgba(201,162,39,.5)">
+            <div class="k">最近的伏擊位</div>
+            <div class="v" id="roAmb"></div>
+            <div style="font-size:14px;color:var(--gold-2);margin-top:2px" id="roAmbName"></div>
+            <div class="muted" style="font-size:13.5px" id="roAmbDist"></div>
+            <div class="muted" style="font-size:13.5px" id="roAmbSop"></div>
+          </div>
+          <div><div class="k">上方最近壓力</div><div class="v mono" id="roUp"></div><div class="muted" style="font-size:12.5px" id="roUpTag"></div></div>
+          <div><div class="k">下方最近支撐</div><div class="v mono" id="roDn"></div><div class="muted" style="font-size:12.5px" id="roDnTag"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三個錦囊 -->
+  <section class="sec sec--ink">
+    <div class="wrap">
+      <p class="eyebrow">三封錦囊</p>
+      <h2 class="sec-title">開盤那一刻，<em>只會發生一種</em>。點開對的那封。</h2>
+      <p class="lede">金色外框代表你現在拖到的價格落在哪個劇本。每封錦囊裡是引擎今天實算的條件、心法、進場、停損與目標。</p>
+      <div class="grid grid--3" style="margin-top:32px">
+        <div class="pouch-card" data-sc="a">
+          <div class="pouch-card__inner">
+            <div class="pouch-card__face pouch-card__front" data-pouch-open tabindex="0" role="button" aria-label="拆開劇本 A 開高突破">
+              <svg class="pouch pouch--cinnabar"><use href="#pouch"/></svg>
+              <h3>劇本 A</h3><p>開高突破 ・ 強勢進攻型</p>
+              <span class="hint">點一下拆開</span>
+            </div>
+            <div class="pouch-card__face pouch-card__back">
+              <h3>劇本 A ・ 開高突破</h3>
+              <div class="kv">
+                <b>條件</b><span class="pc-cond"></span>
+                <b>心法</b><span class="pc-action"></span>
+                <b>進場</b><span class="pc-entry"></span>
+                <b>停損</b><span class="pc-stop"></span>
+                <b>目標</b><span class="pc-target"></span>
+              </div>
+              <button class="btn btn--sm btn--ghost close" data-pouch-close>收回錦囊</button>
+            </div>
+          </div>
+        </div>
+        <div class="pouch-card" data-sc="b">
+          <div class="pouch-card__inner">
+            <div class="pouch-card__face pouch-card__front" data-pouch-open tabindex="0" role="button" aria-label="拆開劇本 B 平盤震盪">
+              <svg class="pouch pouch--gold"><use href="#pouch"/></svg>
+              <h3>劇本 B</h3><p>平盤震盪 ・ 箱型區間型</p>
+              <span class="hint">點一下拆開</span>
+            </div>
+            <div class="pouch-card__face pouch-card__back">
+              <h3>劇本 B ・ 平盤震盪</h3>
+              <div class="kv">
+                <b>條件</b><span class="pc-cond"></span>
+                <b>心法</b><span class="pc-action"></span>
+                <b>進場</b><span class="pc-entry"></span>
+                <b>停損</b><span class="pc-stop"></span>
+                <b>目標</b><span class="pc-target"></span>
+              </div>
+              <button class="btn btn--sm btn--ghost close" data-pouch-close>收回錦囊</button>
+            </div>
+          </div>
+        </div>
+        <div class="pouch-card" data-sc="c">
+          <div class="pouch-card__inner">
+            <div class="pouch-card__face pouch-card__front" data-pouch-open tabindex="0" role="button" aria-label="拆開劇本 C 開低破線">
+              <svg class="pouch pouch--celadon"><use href="#pouch"/></svg>
+              <h3>劇本 C</h3><p>開低破線 ・ 弱勢防守型</p>
+              <span class="hint">點一下拆開</span>
+            </div>
+            <div class="pouch-card__face pouch-card__back">
+              <h3>劇本 C ・ 開低破線</h3>
+              <div class="kv">
+                <b>條件</b><span class="pc-cond"></span>
+                <b>心法</b><span class="pc-action"></span>
+                <b>進場</b><span class="pc-entry"></span>
+                <b>停損</b><span class="pc-stop"></span>
+                <b>目標</b><span class="pc-target"></span>
+                <b>例外</b><span class="pc-fake"></span>
+              </div>
+              <button class="btn btn--sm btn--ghost close" data-pouch-close>收回錦囊</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <blockquote class="quote" style="color:var(--paper);margin-top:40px"><span id="pQuote"></span><small>引擎內建的錦囊妙計之一</small></blockquote>
+    </div>
+  </section>
+
+  <!-- CDP 計算機 -->
+  <section class="sec sec--ink" style="border-top:1px solid var(--line-ink)">
+    <div class="wrap wrap--narrow">
+      <p class="eyebrow">順手算一下</p>
+      <h2 class="sec-title">CDP 五價小計算機</h2>
+      <p class="lede">和引擎用一模一樣的公式。改任何一格，五條線立刻重算；預設帶入目前標的的昨高、昨低、昨收。</p>
+      <div class="panel" style="margin-top:24px">
+        <div class="calc">
+          <label>昨高 H<input type="number" id="inH" step="any" inputmode="decimal"></label>
+          <label>昨低 L<input type="number" id="inL" step="any" inputmode="decimal"></label>
+          <label>昨收 C<input type="number" id="inC" step="any" inputmode="decimal"></label>
+        </div>
+        <div class="cdp-out" id="cdpOut">
+          <div class="AH"><div class="k">AH 極限壓力</div><div class="v">—</div></div>
+          <div class="NH"><div class="k">NH 轉強阻力</div><div class="v">—</div></div>
+          <div class="CDP"><div class="k">CDP 分水嶺</div><div class="v">—</div></div>
+          <div class="NL"><div class="k">NL 轉弱支撐</div><div class="v">—</div></div>
+          <div class="AL"><div class="k">AL 極限支撐</div><div class="v">—</div></div>
+        </div>
+        <p class="muted" style="margin:16px 0 0;font-size:13.5px">CDP = (H + L + 2C) ÷ 4；AH = CDP + (H − L)；NH = 2CDP − L；NL = 2CDP − H；AL = CDP − (H − L)。引擎會再把結果對齊到跳動檔位後掛上天梯。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div><b>當沖撐壓孔明錦囊</b> ・ Peter Chung ・ 2026</div>
+    <nav><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="play.html">拆錦囊</a></nav>
+    <p class="disclaimer">本作品為量化點位與技術結構的精算工具與作品展示，所有數據為 2026-10-21 盤中快照，非任何形式的投資建議。</p>
+  </div>
+</footer>
+
+<script src="assets/data/ladders.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/play.js"></script>
+</body>
+</html>

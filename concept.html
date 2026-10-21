@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>設計發想｜當沖撐壓孔明錦囊</title>
+  <meta name="description" content="為什麼叫孔明錦囊？從每天早上手寫筆記的痛點，到邊界感、紀律、劇本化三個設計原則，再到介面與這個網站本身的設計決策。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="設計發想｜當沖撐壓孔明錦囊">
+  <meta property="og:description" content="從手寫筆記到一座天梯的四幕故事。">
+  <meta property="og:image" content="https://jszhongisbest.github.io/kongming-pouch/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#14110f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="concept">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pouch" viewBox="0 0 120 150">
+    <path d="M60 6v16" stroke="#c9a227" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M60 24c-16-11-34 2-18 12 16 10 34-2 18-12zm0 0c16-11 34 2 18 12-16 10-34-2-18-12z" fill="none" stroke="#c9a227" stroke-width="3"/>
+    <path d="M36 44q24-17 48 0q-5 11-24 11t-24-11z" fill="currentColor"/>
+    <path d="M60 50c-34 2-52 32-52 60 0 30 24 44 52 44s52-14 52-44c0-28-18-58-52-60z" fill="currentColor"/>
+    <path d="M36 44q24-17 48 0" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="3"/>
+    <g fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"><circle cx="42" cy="98" r="9"/><circle cx="74" cy="112" r="12"/><circle cx="82" cy="82" r="6"/></g>
+    <ellipse cx="46" cy="76" rx="12" ry="20" fill="rgba(255,255,255,.1)" transform="rotate(-18 46 76)"/>
+  </symbol>
+</svg>
+
+<header class="nav">
+  <a class="nav__brand" href="index.html"><span class="nav__seal">錦</span><span class="nav__name">當沖撐壓孔明錦囊</span></a>
+  <nav class="nav__links" id="navLinks" aria-label="主選單">
+    <a href="work.html" data-nav="work">作品</a>
+    <a href="concept.html" data-nav="concept">設計發想</a>
+    <a href="usage.html" data-nav="usage">實用情況</a>
+    <a href="play.html" data-nav="play" class="nav__cta">拆錦囊 ▸</a>
+  </nav>
+  <button class="nav__burger" id="navBurger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+</header>
+<div class="nav-spacer"></div>
+
+<main>
+  <section class="page-head sec--ink">
+    <span class="bg-glyph" aria-hidden="true">貳</span>
+    <div class="wrap">
+      <p class="eyebrow">貳 ・ 設計發想</p>
+      <h1>孔明給趙雲三個錦囊，<br>不是因為他料事如神。</h1>
+      <p class="lede">是因為他知道：到了江邊，趙雲一定會慌。所以他把「該做什麼」寫好、封好，交代一句「到了再拆」。這套系統做的事一模一樣，把慌的時刻，提前到開盤之前解決。</p>
+    </div>
+  </section>
+
+  <section class="sec sec--paper paper-tex">
+    <div class="wrap">
+      <!-- 幕一 -->
+      <div class="act reveal">
+        <div>
+          <div class="act__k">第一幕</div>
+          <h3>為什麼是錦囊，不是儀表板</h3>
+          <p>市面上的看盤軟體都在比誰的指標多、誰的畫面閃。但當沖真正的敵人不是資訊不夠，是盤中那幾秒鐘的慌：看到紅就想追，看到綠就想砍。</p>
+          <p>錦囊這個意象，把重點從「知道什麼」搬到「什麼時候拆」。開高、開平、開低，開盤那一刻只會發生其中一種；你不需要三套都記在腦子裡，只要拆對的那一封，照著做。</p>
+          <blockquote class="quote">好獵人懂得蹲。點位沒到，把手綁起來。<small>引擎內建的錦囊妙計</small></blockquote>
+        </div>
+        <figure class="figure figure--card">
+          <svg viewBox="0 0 420 260" role="img" aria-label="三個錦囊分別對應開高、開平、開低三種開盤情境">
+            <g font-family="Noto Sans TC, sans-serif" font-size="13" fill="#4a433c">
+              <text x="210" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1714">09:00 開盤，只會發生一種</text>
+              <g transform="translate(40 60)"><svg width="70" height="88" viewBox="0 0 120 150" style="color:#c8372d"><use href="#pouch"/></svg><text x="35" y="112" text-anchor="middle" font-weight="700">劇本 A</text><text x="35" y="130" text-anchor="middle" fill="#6b645c">開高突破</text></g>
+              <g transform="translate(175 60)"><svg width="70" height="88" viewBox="0 0 120 150" style="color:#c9a227"><use href="#pouch"/></svg><text x="35" y="112" text-anchor="middle" font-weight="700">劇本 B</text><text x="35" y="130" text-anchor="middle" fill="#6b645c">平盤震盪</text></g>
+              <g transform="translate(310 60)"><svg width="70" height="88" viewBox="0 0 120 150" style="color:#5e8c7a"><use href="#pouch"/></svg><text x="35" y="112" text-anchor="middle" font-weight="700">劇本 C</text><text x="35" y="130" text-anchor="middle" fill="#6b645c">開低破線</text></g>
+              <path d="M75 200 L210 232 L345 200" fill="none" stroke="#c9a227" stroke-width="2" stroke-dasharray="5 4"/>
+              <text x="210" y="250" text-anchor="middle" fill="#1b1714" font-weight="700">每封裡面：條件 ・ 進場 ・ 停損 ・ 目標</text>
+            </g>
+          </svg>
+          <figcaption>三封錦囊，各自封好。開盤只拆一封。</figcaption>
+        </figure>
+      </div>
+
+      <!-- 幕二 -->
+      <div class="act reveal">
+        <div>
+          <div class="act__k">第二幕</div>
+          <h3>痛點：每天早上的那張紙</h3>
+          <p>在有這套系統之前，盤前準備是一張手寫的紙：抄昨高昨低、按計算機算 CDP 五價、對著圖把均線和整理箱的位置畫上去，再憑感覺標幾個「這裡可以做」。二十分鐘起跳，而且常算錯一檔。</p>
+          <p>更糟的是，紙上的點位沒有「等級」。昨高、整數關、月線、前高疊在同一個價位附近時，紙上只看到一堆線，看不出哪一個才是真正的邊界。</p>
+          <p>所以第一個設計決定是：所有東西先對齊到「檔位」這把尺上，再把疊在一起的理由數出來。疊得越多，階梯越亮。</p>
+        </div>
+        <figure class="figure figure--card">
+          <svg viewBox="0 0 420 260" role="img" aria-label="左邊是手寫筆記的雜亂線條，右邊是對齊到檔位的天梯">
+            <g font-family="Noto Sans TC, sans-serif" font-size="12">
+              <text x="100" y="22" text-anchor="middle" font-weight="700" fill="#6b645c">以前：一張紙</text>
+              <rect x="20" y="34" width="160" height="200" rx="4" fill="#fff9ec" stroke="#ddd3bd"/>
+              <g stroke="#6b645c" stroke-width="1.2" opacity=".7">
+                <path d="M34 70 q40 -6 80 2 t60 -3"/><path d="M34 98 q50 8 90 -2 t50 4"/><path d="M34 122 q30 -10 70 0 t70 2"/><path d="M34 150 q60 6 120 -4"/><path d="M34 176 q40 10 80 -2 t60 6"/><path d="M34 206 q50 -8 110 4"/>
+              </g>
+              <g fill="#c8372d" font-size="11"><text x="40" y="66">昨高?</text><text x="110" y="94">CDP</text><text x="60" y="146">月線?</text><text x="120" y="172">前高</text><text x="46" y="202">這裡?</text></g>
+              <text x="320" y="22" text-anchor="middle" font-weight="700" fill="#1b1714">現在：一座天梯</text>
+              <g font-family="IBM Plex Mono, monospace" font-size="11">
+                <g transform="translate(240 40)">
+                  <rect width="160" height="20" rx="4" fill="#f1d6d2"/><rect width="4" height="20" rx="2" fill="#c8372d"/><text x="10" y="14" fill="#1b1714">2440</text><text x="150" y="14" text-anchor="end" fill="#4a433c" font-family="Noto Sans TC">伏擊 Top1 ・ 10 項匯流</text>
+                </g>
+                <g transform="translate(240 66)"><rect width="160" height="18" rx="4" fill="#faf3e6"/><rect width="4" height="18" rx="2" fill="#c8372d"/><text x="10" y="13" fill="#1b1714">2435</text><text x="150" y="13" text-anchor="end" fill="#6b645c" font-family="Noto Sans TC">昨高 ・ 4 項</text></g>
+                <g transform="translate(240 90)"><rect width="160" height="18" rx="4" fill="#faf3e6"/><rect width="4" height="18" rx="2" fill="#c8372d"/><text x="10" y="13" fill="#1b1714">2430</text><text x="150" y="13" text-anchor="end" fill="#6b645c" font-family="Noto Sans TC">NH ・ 4 項</text></g>
+                <g transform="translate(240 114)"><rect width="160" height="20" rx="4" fill="#f0e6c2"/><rect width="4" height="20" rx="2" fill="#b08418"/><text x="10" y="14" fill="#1b1714">2420</text><text x="150" y="14" text-anchor="end" fill="#4a433c" font-family="Noto Sans TC">伏擊 Top3 ・ 9 項匯流</text></g>
+                <g transform="translate(240 140)"><rect width="160" height="18" rx="4" fill="#faf3e6"/><rect width="4" height="18" rx="2" fill="#2a8a66"/><text x="10" y="13" fill="#1b1714">2415</text><text x="150" y="13" text-anchor="end" fill="#6b645c" font-family="Noto Sans TC">昨低 ・ 2 項</text></g>
+                <g transform="translate(240 164)"><rect width="160" height="18" rx="4" fill="#faf3e6"/><rect width="4" height="18" rx="2" fill="#2a8a66"/><text x="10" y="13" fill="#1b1714">2410</text><text x="150" y="13" text-anchor="end" fill="#6b645c" font-family="Noto Sans TC">NL ・ 6 項</text></g>
+                <g transform="translate(240 188)"><rect width="160" height="20" rx="4" fill="#d6e4dc"/><rect width="4" height="20" rx="2" fill="#2a8a66"/><text x="10" y="14" fill="#1b1714">2400</text><text x="150" y="14" text-anchor="end" fill="#4a433c" font-family="Noto Sans TC">伏擊 Top2 ・ 7 項匯流</text></g>
+                <g transform="translate(240 214)"><rect width="160" height="18" rx="4" fill="#faf3e6"/><rect width="4" height="18" rx="2" fill="#2a8a66"/><text x="10" y="13" fill="#1b1714">2375</text><text x="150" y="13" text-anchor="end" fill="#6b645c" font-family="Noto Sans TC">半年線 ・ 4 項</text></g>
+              </g>
+            </g>
+          </svg>
+          <figcaption>同樣的資訊，差別在有沒有一把尺、有沒有「亮度」。</figcaption>
+        </figure>
+      </div>
+
+      <!-- 幕三 -->
+      <div class="act reveal">
+        <div>
+          <div class="act__k">第三幕</div>
+          <h3>三個設計原則</h3>
+          <p><b>邊界感。</b>行情在中間的時候，誰都看不懂；只有碰到邊界的時候，多空才會攤牌。所以系統只標出三個邊界：上方極限、下方地板、中間的分水嶺。</p>
+          <p><b>紀律先於判斷。</b>軟體刻意「少給」：不給十個點位，只給三個；不預測漲跌，只告訴你到了哪裡該做什麼。少，才會真的照做。</p>
+          <p><b>把決策提前。</b>進場、停損、目標都在開盤前寫好。盤中要做的只剩一件事：確認哪個劇本成立，然後執行。</p>
+        </div>
+        <figure class="figure figure--card">
+          <svg viewBox="0 0 420 260" role="img" aria-label="價格走勢只在三個邊界出手，中間區域不動">
+            <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#ddd3bd" stroke-width="2"/></pattern></defs>
+            <g font-family="Noto Sans TC, sans-serif" font-size="12">
+              <rect x="40" y="86" width="340" height="88" fill="url(#hatch)" opacity=".8"/>
+              <text x="210" y="134" text-anchor="middle" fill="#6b645c" font-weight="700">中間 ・ 看不懂 ・ 把手綁起來</text>
+              <line x1="40" y1="60" x2="380" y2="60" stroke="#c8372d" stroke-width="2.5"/><text x="46" y="52" fill="#c8372d" font-weight="700">上方極限獵殺位 ・ 遇阻轉弱空</text>
+              <line x1="40" y1="130" x2="380" y2="130" stroke="#b08418" stroke-width="2" stroke-dasharray="6 4"/><text x="372" y="122" text-anchor="end" fill="#8a6a10" font-weight="700">多空決戰生死嶺</text>
+              <line x1="40" y1="200" x2="380" y2="200" stroke="#2a8a66" stroke-width="2.5"/><text x="46" y="220" fill="#2a8a66" font-weight="700">下方黃金吸籌位 ・ 收腳多</text>
+              <path d="M40 150 C80 110 100 70 130 62 S180 120 210 150 S260 200 290 198 S340 150 380 120" fill="none" stroke="#1b1714" stroke-width="2"/>
+              <circle cx="130" cy="62" r="6" fill="#c8372d"/><circle cx="290" cy="198" r="6" fill="#2a8a66"/>
+              <text x="130" y="40" text-anchor="middle" fill="#1b1714" font-size="11">出手</text><text x="290" y="244" text-anchor="middle" fill="#1b1714" font-size="11">出手</text>
+            </g>
+          </svg>
+          <figcaption>走勢在中間晃的時候不動；碰到邊界，才扣板機。</figcaption>
+        </figure>
+      </div>
+
+      <!-- 幕四 -->
+      <div class="act reveal">
+        <div>
+          <div class="act__k">第四幕</div>
+          <h3>介面的五個決定</h3>
+          <p><b>深色主視窗。</b>盤中要盯一整個上午，低亮度、高對比、少刺眼的色塊。</p>
+          <p><b>左梯右圖。</b>價位和走勢必須同屏：左手看「哪裡」，右手看「現在走到哪」。</p>
+          <p><b>決策彩帶。</b>最上面四張卡，十秒讀完今天的全部前提：平盤昨高昨低、J-Box、均線預警、CDP。</p>
+          <p><b>雙欄純文字筆記。</b>一鍵複製，貼到 LINE 或手機備忘錄；盤中不用開電腦也看得到。</p>
+          <p><b>一秒切換。</b>台指期、加權、櫃買固定在右上角，任何個股輸入代號或名稱都行。</p>
+        </div>
+        <figure class="figure figure--card">
+          <svg viewBox="0 0 420 260" role="img" aria-label="桌面程式版面示意：上方決策彩帶、左側天梯、右側圖表與分頁">
+            <g font-family="Noto Sans TC, sans-serif" font-size="11" fill="#cfc6b3">
+              <rect x="10" y="10" width="400" height="240" rx="8" fill="#14110f"/>
+              <rect x="18" y="18" width="384" height="22" rx="4" fill="#2a2521"/><text x="26" y="33" fill="#f3ede0" font-weight="700">⚡ 當沖關鍵量價撐壓天梯</text><rect x="300" y="22" width="40" height="14" rx="3" fill="#c9a227"/><rect x="346" y="22" width="52" height="14" rx="3" fill="#c8372d"/>
+              <g><rect x="18" y="46" width="92" height="34" rx="4" fill="#1d1916" stroke="#3a332d"/><rect x="116" y="46" width="92" height="34" rx="4" fill="#1d1916" stroke="#3a332d"/><rect x="214" y="46" width="92" height="34" rx="4" fill="#1d1916" stroke="#3a332d"/><rect x="312" y="46" width="90" height="34" rx="4" fill="#1d1916" stroke="#3a332d"/><text x="210" y="67" text-anchor="middle" fill="#c9a227">決策彩帶：四張卡，十秒讀完</text></g>
+              <rect x="18" y="88" width="170" height="154" rx="4" fill="#1d1916" stroke="#3a332d"/>
+              <g><rect x="26" y="100" width="154" height="10" rx="2" fill="#2a2521"/><rect x="26" y="114" width="154" height="10" rx="2" fill="#3a2a16"/><rect x="26" y="128" width="154" height="10" rx="2" fill="#2a2521"/><rect x="26" y="142" width="154" height="10" rx="2" fill="#2a2521"/><rect x="26" y="156" width="154" height="10" rx="2" fill="#3a2a16"/><rect x="26" y="170" width="154" height="10" rx="2" fill="#2a2521"/><rect x="26" y="184" width="154" height="10" rx="2" fill="#2a2521"/><rect x="26" y="198" width="154" height="10" rx="2" fill="#1f3a2e"/><rect x="26" y="212" width="154" height="10" rx="2" fill="#2a2521"/></g>
+              <text x="103" y="236" text-anchor="middle" fill="#9a917f">天梯 ・ 漲停到跌停</text>
+              <rect x="196" y="88" width="206" height="154" rx="4" fill="#1d1916" stroke="#3a332d"/>
+              <g><rect x="204" y="94" width="44" height="12" rx="2" fill="#c9a227"/><rect x="252" y="94" width="44" height="12" rx="2" fill="#2a2521"/><rect x="300" y="94" width="44" height="12" rx="2" fill="#2a2521"/><rect x="348" y="94" width="48" height="12" rx="2" fill="#2a2521"/></g>
+              <path d="M210 200 l20 -30 l16 10 l22 -40 l18 20 l20 -34 l22 16 l20 -24 l24 30 l18 -12" fill="none" stroke="#d6463a" stroke-width="2"/>
+              <path d="M210 170 q50 -20 90 -6 t92 -24" fill="none" stroke="#c9a227" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <text x="299" y="236" text-anchor="middle" fill="#9a917f">撐壓圖 ・ 錦囊劇本 ・ 筆記 ・ 自選</text>
+            </g>
+          </svg>
+          <figcaption>左梯右圖，上面一條彩帶。版面就是流程。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 尾聲：網站本身 -->
+  <section class="sec sec--ink">
+    <div class="wrap">
+      <p class="eyebrow reveal">尾聲</p>
+      <h2 class="sec-title reveal">這個網站，<em>也是作品的一部分</em>。</h2>
+      <p class="lede reveal" data-delay="1">金融軟體的視覺慣例是藍黑霓虹、閃爍的紅綠、密密麻麻的數字。但這套系統的核心動作是「等」，不是「刺激」。所以展示它的網站，選了墨、宣紙、朱砂、金箔、青瓷，標題用襯線字，數字用等寬字。朱砂是壓力，青瓷是支撐，金箔只給分水嶺和三個伏擊位。顏色不裝飾，顏色就是資料。</p>
+      <div class="swatches reveal" data-delay="2" style="margin-top:28px">
+        <div class="swatch"><i style="background:#14110f"></i><b>墨</b><span>#14110F</span></div>
+        <div class="swatch"><i style="background:#f3ede0"></i><b>宣紙</b><span>#F3EDE0</span></div>
+        <div class="swatch"><i style="background:#c8372d"></i><b>朱砂 ・ 壓力</b><span>#C8372D</span></div>
+        <div class="swatch"><i style="background:#c9a227"></i><b>金箔 ・ 分水嶺</b><span>#C9A227</span></div>
+        <div class="swatch"><i style="background:#5e8c7a"></i><b>青瓷 ・ 支撐</b><span>#5E8C7A</span></div>
+      </div>
+      <p class="muted reveal" style="margin-top:22px;font-size:14px">天梯的三個識別色都跑過色覺模擬與對比度檢查（紅綠色盲、藍黃色盲、正常視覺的可分辨距離，以及與底色的 3:1 對比），並且每一階都有文字標籤，不靠顏色單獨傳達意義。</p>
+      <div class="reveal" style="margin-top:40px;display:flex;gap:14px;flex-wrap:wrap">
+        <a class="btn btn--gold" href="usage.html">看目前實用情況</a>
+        <a class="btn btn--ghost" href="play.html">去拆錦囊</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div><b>當沖撐壓孔明錦囊</b> ・ Peter Chung ・ 2026</div>
+    <nav><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="play.html">拆錦囊</a></nav>
+    <p class="disclaimer">本作品為量化點位與技術結構的精算工具與作品展示，所有數據為 2026-10-21 盤中快照，非任何形式的投資建議。</p>
+  </div>
+</footer>
+
+<script src="assets/data/ladders.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>實用情況｜當沖撐壓孔明錦囊</title>
+  <meta name="description" content="2026-10-21 的驗證時間軸：實際執行引擎、三檔標的真實輸出、CDP 公式重算驗證、每日盤前流程，以及誠實的限制與下一步。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="實用情況｜當沖撐壓孔明錦囊">
+  <meta property="og:description" content="2026-10-21 驗證時間軸、三檔真實輸出與公式重算。">
+  <meta property="og:image" content="https://jszhongisbest.github.io/kongming-pouch/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#14110f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="usage">
+<header class="nav">
+  <a class="nav__brand" href="index.html"><span class="nav__seal">錦</span><span class="nav__name">當沖撐壓孔明錦囊</span></a>
+  <nav class="nav__links" id="navLinks" aria-label="主選單">
+    <a href="work.html" data-nav="work">作品</a>
+    <a href="concept.html" data-nav="concept">設計發想</a>
+    <a href="usage.html" data-nav="usage">實用情況</a>
+    <a href="play.html" data-nav="play" class="nav__cta">拆錦囊 ▸</a>
+  </nav>
+  <button class="nav__burger" id="navBurger" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+</header>
+<div class="nav-spacer"></div>
+
+<main>
+  <section class="page-head sec--ink">
+    <span class="bg-glyph" aria-hidden="true">參</span>
+    <div class="wrap">
+      <p class="eyebrow">參 ・ 目前實用情況</p>
+      <h1>今天早上，<br>它真的跑了一遍。</h1>
+      <p class="lede">這一頁不講願景，只記錄 2026-10-21 這一天實際發生的事：引擎在什麼時間、對哪幾檔標的、算出了什麼，以及我怎麼驗證它算得對。所有截圖與數字都是當天盤中直接擷取，沒有後製。</p>
+    </div>
+  </section>
+
+  <!-- 時間軸 -->
+  <section class="sec sec--paper paper-tex">
+    <div class="wrap">
+      <div class="grid grid--2" style="align-items:start">
+        <div>
+          <p class="eyebrow reveal">驗證時間軸 ・ 2026-10-21（三）</p>
+          <h2 class="sec-title reveal">從開程式到截完圖，<em>三分鐘</em>。</h2>
+          <div class="timeline reveal" data-delay="1" style="margin-top:28px">
+            <div class="tl tl--done"><div class="tl__time">11:00:20</div><h4>執行引擎：台積電 2330</h4><p>抓取日 K、30 分 K、5 分 K 與盤中即時價，產出 19 階天梯、三大伏擊位、三個劇本。耗時 4.8 秒。</p></div>
+            <div class="tl tl--done"><div class="tl__time">11:00:25</div><h4>執行引擎：華通 2313</h4><p>20 階天梯。耗時 1.6 秒（名稱對照庫命中，不需額外查詢）。</p></div>
+            <div class="tl tl--done"><div class="tl__time">11:00:26</div><h4>執行引擎：台指期 TXF</h4><p>由期交所即時報價取得盤中價，17 階天梯。耗時 1.9 秒。</p></div>
+            <div class="tl tl--done"><div class="tl__time">11:00:28</div><h4>輸出 9 張高解析撐壓圖</h4><p>三檔標的 × 三個週期，直接由引擎的繪圖函式輸出，就是桌面版右側那張圖。</p></div>
+            <div class="tl tl--done"><div class="tl__time">11:01 – 11:03</div><h4>啟動桌面版，程式化操作並截圖</h4><p>依序載入三檔標的、切換三個週期與四個分頁，擷取 10 張畫面，供「作品」頁的導覽使用。</p></div>
+            <div class="tl tl--done"><div class="tl__time">11:05</div><h4>CDP 五價公式重算</h4><p>用引擎輸出的昨高、昨低、昨收，手動重算五價，與引擎結果逐一比對。三檔全部一致（見右表）。</p></div>
+          </div>
+        </div>
+        <div class="reveal" data-delay="2">
+          <div class="card">
+            <h3 style="font-size:20px">公式重算驗證</h3>
+            <p class="muted" style="font-size:14px">CDP = (H + L + 2C) ÷ 4，其餘四價由 CDP 與昨日振幅推得。</p>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>標的</th><th>H / L / C</th><th>CDP</th><th>AH</th><th>NH</th><th>NL</th><th>AL</th><th></th></tr></thead>
+                <tbody>
+                  <tr><td>2330</td><td class="num">2435 / 2415 / 2420</td><td class="num">2422.5</td><td class="num">2442.5</td><td class="num">2430</td><td class="num">2410</td><td class="num">2402.5</td><td class="ok">一致</td></tr>
+                  <tr><td>2313</td><td class="num">266 / 243.5 / 243.5</td><td class="num">249.12</td><td class="num">271.62</td><td class="num">254.75</td><td class="num">232.25</td><td class="num">226.62</td><td class="ok">一致</td></tr>
+                  <tr><td>TXF</td><td class="num">47450 / 47085 / 47179</td><td class="num">47223.2</td><td class="num">47588.2</td><td class="num">47361.5</td><td class="num">46996.5</td><td class="num">46858.2</td><td class="ok">一致</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="muted" style="font-size:13px;margin:12px 0 0">天梯上顯示的價位會再對齊到跳動檔位（例如 2313 的 CDP 249.12 掛在 249.0 那一階），所以天梯數字與原始五價會差半檔以內。</p>
+          </div>
+          <div class="card" style="margin-top:18px">
+            <h3 style="font-size:20px">今天三檔的結論</h3>
+            <div class="table-wrap">
+              <table class="table">
+                <thead><tr><th>標的</th><th>主觀預判</th><th>Top1 獵殺</th><th>Top3 分水嶺</th><th>Top2 吸籌</th></tr></thead>
+                <tbody>
+                  <tr><td>台積電</td><td>偏空思考 ★★★★★</td><td class="num">2440</td><td class="num">2420</td><td class="num">2400</td></tr>
+                  <tr><td>華通</td><td>偏多思考 ★★★★☆</td><td class="num">249.0</td><td class="num">245.0</td><td class="num">240.5</td></tr>
+                  <tr><td>台指期</td><td>偏空思考 ★★★★★</td><td class="num">47603</td><td class="num">47102</td><td class="num">46447</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 真實輸出 -->
+  <section class="sec sec--ink">
+    <div class="wrap">
+      <p class="eyebrow reveal">真實輸出</p>
+      <h2 class="sec-title reveal">引擎印出來的<em>作戰筆記</em>，一字不改。</h2>
+      <p class="lede reveal" data-delay="1">左邊是桌面版「手作作戰筆記」分頁的實拍：雙欄排版，左行天梯、右行伏擊位。下面三份是引擎實際輸出的敘事段落，打字機效果播放中，點一下可以直接看完。</p>
+      <div class="grid grid--2 reveal" data-delay="1" style="margin-top:32px;align-items:start">
+        <div class="window">
+          <div class="window__bar"><i></i><i></i><i></i><span>手作作戰筆記 ・ 雙欄排版 ・ 2330</span></div>
+          <img src="assets/img/notes_box.webp" alt="雙欄純文字作戰筆記：左行關鍵撐壓天梯，右行三大獵殺伏擊位" width="1148" height="344" loading="lazy">
+        </div>
+        <div class="window">
+          <div class="window__bar"><i></i><i></i><i></i><span>撐壓錦囊妙計與三大劇本 ・ 2330</span></div>
+          <img src="assets/img/playbook_crop.webp" alt="錦囊妙計分頁：今日主觀預判、三大伏擊位的理由與 SOP" width="1148" height="690" loading="lazy" style="max-height:344px;object-fit:cover;object-position:top">
+        </div>
+      </div>
+      <div class="grid grid--3" style="margin-top:28px;align-items:start">
+        <div class="reveal" data-delay="1">
+          <div class="note note--ink"><pre data-type-src="2330" data-type-mode="narrative" data-cps="700" aria-label="台積電作戰筆記"></pre></div>
+        </div>
+        <div class="reveal" data-delay="2">
+          <div class="note note--ink"><pre data-type-src="2313" data-type-mode="narrative" data-cps="700" aria-label="華通作戰筆記"></pre></div>
+        </div>
+        <div class="reveal" data-delay="3">
+          <div class="note note--ink"><pre data-type-src="TXF" data-type-mode="narrative" data-cps="700" aria-label="台指期作戰筆記"></pre></div>
+        </div>
+      </div>
+      <p class="muted reveal" style="margin-top:18px;font-size:13.5px">備註：截圖與數據分別在 11:00 與 11:03 擷取，盤中價格持續變動，所以畫面上的平盤、昨高等數值與本頁表格可能相差一檔，屬正常現象。</p>
+    </div>
+  </section>
+
+  <!-- 每日流程 -->
+  <section class="sec sec--paper paper-tex">
+    <div class="wrap">
+      <p class="eyebrow reveal">每天怎麼用</p>
+      <h2 class="sec-title reveal">盤前十分鐘的<em>固定流程</em>。</h2>
+      <div class="grid grid--4" style="margin-top:32px">
+        <div class="card feature reveal" data-delay="1"><span class="feature__num">08:30</span><h3>開程式，輸入代號</h3><p>自選名單裡的標的一檔一檔跑，或直接按台指期。每檔兩到五秒。</p></div>
+        <div class="card feature reveal" data-delay="2"><span class="feature__num">08:35</span><h3>讀決策彩帶與預判</h3><p>平盤昨高昨低、J-Box、均線預警、CDP 五價，加上今天偏多還是偏空思考。</p></div>
+        <div class="card feature reveal" data-delay="3"><span class="feature__num">08:40</span><h3>抄下三個伏擊位</h3><p>一鍵複製作戰筆記貼到手機。三個點、三個劇本，這就是今天唯一允許出手的地方。</p></div>
+        <div class="card feature reveal" data-delay="3"><span class="feature__num">09:00</span><h3>開盤，只做一件事</h3><p>看開高、開平還是開低，拆對的錦囊，照著進場停損目標執行。沒到位置，不動。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 限制與下一步 -->
+  <section class="sec sec--ink">
+    <div class="wrap">
+      <div class="grid grid--2" style="align-items:start">
+        <div>
+          <p class="eyebrow reveal">誠實地說</p>
+          <h2 class="sec-title reveal">目前的限制</h2>
+          <div class="reveal" data-delay="1" style="display:flex;flex-direction:column;gap:14px">
+            <div class="card card--accent" style="--accent:var(--cinnabar)"><b>行情來源是公開免費資料。</b><br><span class="muted">證交所、期交所與 Yahoo 的公開介面在盤中有數秒到數分鐘的延遲，適合盤前規劃與盤中參考，不適合毫秒級的下單決策。</span></div>
+            <div class="card card--accent" style="--accent:var(--cinnabar)"><b>伏擊位是結構，不是預言。</b><br><span class="muted">它告訴你哪裡「最可能攤牌」，不告訴你會往哪邊走。所以劇本一定配停損。</span></div>
+            <div class="card card--accent" style="--accent:var(--cinnabar)"><b>仍在驗證階段。</b><br><span class="muted">目前累積的是每日的實算與人工比對，還沒有足夠的交易日數做統計上的勝率結論。這一頁寫的就是現在的真實進度。</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow reveal">接下來</p>
+          <h2 class="sec-title reveal">下一步</h2>
+          <div class="reveal" data-delay="2" style="display:flex;flex-direction:column;gap:14px">
+            <div class="card card--accent" style="--accent:var(--celadon)"><b>每日自動記錄。</b><br><span class="muted">每天盤後自動存下三大伏擊位與當天實際高低，統計「觸及率」與「劇本命中率」。</span></div>
+            <div class="card card--accent" style="--accent:var(--celadon)"><b>回測模組。</b><br><span class="muted">用歷史日 K 與分 K 回放，看過去三個月如果照劇本執行會發生什麼。</span></div>
+            <div class="card card--accent" style="--accent:var(--celadon)"><b>盤後覆盤自動化。</b><br><span class="muted">收盤後自動產出「今天哪個劇本成立、伏擊位有沒有被碰到」的一頁覆盤。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="margin-top:48px;text-align:center">
+        <a class="btn btn--cinnabar" href="play.html">用今天的數據拆一次錦囊</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div><b>當沖撐壓孔明錦囊</b> ・ Peter Chung ・ 2026</div>
+    <nav><a href="work.html">作品</a><a href="concept.html">設計發想</a><a href="usage.html">實用情況</a><a href="play.html">拆錦囊</a></nav>
+    <p class="disclaimer">本作品為量化點位與技術結構的精算工具與作品展示，所有數據為 2026-10-21 盤中快照，非任何形式的投資建議。</p>
+  </div>
+</footer>
+
+<script src="assets/data/ladders.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
