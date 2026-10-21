@@ -39,6 +39,7 @@
       <p class="eyebrow">零 ・ 第一次看</p>
       <h1>第一次看？<br>花十分鐘，我帶你看一遍。</h1>
       <p class="lede">你不需要懂任何股票術語。下面每一步都用台積電（2330）今天真實的數字，看完你就知道這套系統在做什麼、畫面怎麼讀、平常怎麼用。看到<span class="term" data-term="sr">有底線的字</span>，滑過去或點一下，會有一句解釋。</p>
+      <p class="readstrip" data-readstrip></p>
     </div>
   </section>
 
@@ -101,27 +102,43 @@
   <section class="sec sec--paper paper-tex">
     <div class="wrap">
       <p class="eyebrow reveal">第三步</p>
-      <h2 class="sec-title reveal">看懂主畫面：<em>點一個數字</em>，我告訴你那一塊在講什麼。</h2>
-      <p class="lede reveal" data-delay="1">這是桌面版打開台積電之後的畫面。你第一次看一定覺得資訊很多，其實只有四個區域：最上面一排卡片、左邊的天梯、右邊的圖、右邊的分頁。從 ① 開始點。</p>
-      <div class="hotmap reveal" data-delay="1" style="margin-top:32px" id="hotmap">
-        <div class="hotmap__stage">
-          <img src="assets/img/shot_01_main_2330.webp" alt="桌面版主畫面：上方四張決策卡，左側價格天梯，右側 K 線撐壓圖與分頁" width="1920" height="1129">
-          <button class="hot" style="left:13%;top:9%" data-i="0" aria-label="熱點 1">1</button>
-          <button class="hot" style="left:36.5%;top:9%" data-i="1" aria-label="熱點 2">2</button>
-          <button class="hot" style="left:59.5%;top:9%" data-i="2" aria-label="熱點 3">3</button>
-          <button class="hot" style="left:85%;top:9%" data-i="3" aria-label="熱點 4">4</button>
-          <button class="hot" style="left:4.5%;top:28%" data-i="4" aria-label="熱點 5">5</button>
-          <button class="hot" style="left:14.5%;top:37.5%" data-i="5" aria-label="熱點 6">6</button>
-          <button class="hot" style="left:28%;top:35.5%" data-i="6" aria-label="熱點 7">7</button>
-          <button class="hot" style="left:55%;top:16.5%" data-i="7" aria-label="熱點 8">8</button>
-          <button class="hot" style="left:70%;top:62%" data-i="8" aria-label="熱點 9">9</button>
-          <button class="hot" style="left:89%;top:2.4%" data-i="9" aria-label="熱點 10">10</button>
+      <h2 class="sec-title reveal">看懂主畫面：<em>點一個數字</em>，畫面就放大到那一塊。</h2>
+      <p class="lede reveal" data-delay="1">這是桌面版打開台積電之後的畫面。你第一次看一定覺得資訊很多，其實只有四個區域：最上面一排卡片、左邊的天梯、右邊的圖、右邊的分頁。點任何一個數字，那一塊會放大到和桌面版一樣清楚，下面同時出現解釋；按「看全圖」回來。懶得點，就按「自動帶我看」。</p>
+    </div>
+    <div class="hotmap reveal" data-delay="1" style="margin-top:32px" id="hotmap">
+      <div class="wrap--wide">
+        <div class="zstage" id="hotStage" tabindex="0" aria-label="桌面版主畫面，可放大與拖曳">
+          <div class="zstage__cam">
+            <img src="assets/img/shot_01_main_2330.webp" alt="桌面版主畫面：上方四張決策卡，左側價格天梯，右側 K 線撐壓圖與分頁" width="1920" height="1129">
+            <button type="button" class="hot" style="left:13%;top:9%" data-i="0" aria-label="熱點 1">1</button>
+            <button type="button" class="hot" style="left:36.5%;top:9%" data-i="1" aria-label="熱點 2">2</button>
+            <button type="button" class="hot" style="left:59.5%;top:9%" data-i="2" aria-label="熱點 3">3</button>
+            <button type="button" class="hot" style="left:85%;top:9%" data-i="3" aria-label="熱點 4">4</button>
+            <button type="button" class="hot" style="left:4.5%;top:28%" data-i="4" aria-label="熱點 5">5</button>
+            <button type="button" class="hot" style="left:14.5%;top:37.5%" data-i="5" aria-label="熱點 6">6</button>
+            <button type="button" class="hot" style="left:28%;top:35.5%" data-i="6" aria-label="熱點 7">7</button>
+            <button type="button" class="hot" style="left:55%;top:16.5%" data-i="7" aria-label="熱點 8">8</button>
+            <button type="button" class="hot" style="left:70%;top:62%" data-i="8" aria-label="熱點 9">9</button>
+            <button type="button" class="hot" style="left:89%;top:2.4%" data-i="9" aria-label="熱點 10">10</button>
+          </div>
         </div>
+      </div>
+      <div class="wrap">
         <div class="hotmap__panel" aria-live="polite">
-          <div class="k" id="hotK">① 最上面第一張卡</div>
-          <h3 id="hotT">標的與五個數字</h3>
-          <p id="hotP">你剛剛認識的那五個數字都在這張卡：平盤 2420、中關 2425（昨高昨低的中間）、昨高 2435、昨低 2415。先看這裡，再看其他地方。</p>
-          <div class="hotmap__list" id="hotList"></div>
+          <div>
+            <div class="k" id="hotK">① 最上面第一張卡</div>
+            <h3 id="hotT">標的與五個數字</h3>
+            <p id="hotP">你剛剛認識的那五個數字都在這張卡：平盤 2420、中關 2425（昨高昨低的中間）、昨高 2435、昨低 2415。先看這裡，再看其他地方。</p>
+          </div>
+          <div>
+            <div class="hotmap__ctrl">
+              <button type="button" class="btn btn--gold btn--sm" id="hotAuto">▶ 自動帶我看</button>
+              <button type="button" class="btn btn--ghost btn--sm" id="hotFit">⊡ 看全圖</button>
+              <span class="hotmap__nav"><button type="button" id="hotPrev" aria-label="上一個">‹</button><button type="button" id="hotNext" aria-label="下一個">›</button></span>
+            </div>
+            <div class="hotmap__list" id="hotList"></div>
+            <p class="hotmap__done" id="hotDone" hidden>十塊都看完了。接下來去<a href="play.html">拆錦囊，按「帶我走一遍」 ▸</a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -154,16 +171,16 @@
       <h2 class="sec-title reveal">三個位置、三個劇本，<em>白話版</em>。</h2>
       <p class="lede reveal" data-delay="1">整套系統最後只要你記住這六件事。位置是「在哪裡等」，劇本是「開盤發生什麼就怎麼做」。</p>
       <div class="grid grid--3" style="margin-top:28px">
-        <div class="card reveal" data-delay="1" style="border-top:5px solid var(--dl-res)"><div class="mono" style="font-size:26px;font-weight:600">2440</div><h3 style="font-size:19px;margin:4px 0 6px">上方獵殺位（Top1）</h3><p class="muted" style="margin:0;font-size:14.5px">價格往上衝到這裡，很多人想賣。如果衝不過、留下長上影線，這裡適合做空或把多單賣掉。帶量站上 2450 就當作看錯，放棄。</p></div>
-        <div class="card reveal" data-delay="2" style="border-top:5px solid var(--dl-sup)"><div class="mono" style="font-size:26px;font-weight:600">2400</div><h3 style="font-size:19px;margin:4px 0 6px">下方吸籌位（Top2）</h3><p class="muted" style="margin:0;font-size:14.5px">價格跌到這裡，很多人想買。如果量縮、出現下影線站穩，這裡適合做多。帶量跌破 2390 就不要接。</p></div>
-        <div class="card reveal" data-delay="3" style="border-top:5px solid var(--dl-piv)"><div class="mono" style="font-size:26px;font-weight:600">2420</div><h3 style="font-size:19px;margin:4px 0 6px">分水嶺（Top3）</h3><p class="muted" style="margin:0;font-size:14.5px">就是平盤。站在上面偏多想，跌到下面偏空想。離它兩檔以內什麼都不做。</p></div>
+        <div class="card reveal" data-delay="1" style="border-top:5px solid var(--dl-res)"><div class="mono" style="font-size:26px;font-weight:600">2440</div><h3 style="font-size:19px;margin:4px 0 6px">上方獵殺位（Top1）</h3><p class="muted" style="margin:0;font-size:16px">價格往上衝到這裡，很多人想賣。如果衝不過、留下長上影線，這裡適合做空或把多單賣掉。帶量站上 2450 就當作看錯，放棄。</p></div>
+        <div class="card reveal" data-delay="2" style="border-top:5px solid var(--dl-sup)"><div class="mono" style="font-size:26px;font-weight:600">2400</div><h3 style="font-size:19px;margin:4px 0 6px">下方吸籌位（Top2）</h3><p class="muted" style="margin:0;font-size:16px">價格跌到這裡，很多人想買。如果量縮、出現下影線站穩，這裡適合做多。帶量跌破 2390 就不要接。</p></div>
+        <div class="card reveal" data-delay="3" style="border-top:5px solid var(--dl-piv)"><div class="mono" style="font-size:26px;font-weight:600">2420</div><h3 style="font-size:19px;margin:4px 0 6px">分水嶺（Top3）</h3><p class="muted" style="margin:0;font-size:16px">就是平盤。站在上面偏多想，跌到下面偏空想。離它兩檔以內什麼都不做。</p></div>
       </div>
       <div class="grid grid--3" style="margin-top:18px">
-        <div class="card reveal" data-delay="1"><div style="display:flex;align-items:center;gap:10px"><span class="nav__seal" style="background:var(--cinnabar)">A</span><h3 style="font-size:19px;margin:0">開盤比昨天高</h3></div><p class="muted" style="margin:10px 0 0;font-size:14.5px">越過昨高 2435。不要急著追，等它回踩 2435 沒跌破再買。跌回平盤 2420 就<span class="term" data-term="stop">停損</span>。</p></div>
-        <div class="card reveal" data-delay="2"><div style="display:flex;align-items:center;gap:10px"><span class="nav__seal" style="background:var(--gold);color:var(--ink)">B</span><h3 style="font-size:19px;margin:0">開盤跟昨天差不多</h3></div><p class="muted" style="margin:10px 0 0;font-size:14.5px">在 2420 上下 0.5% 內晃。中間不動，等價格走到 2440 或 2400 這兩個邊界再出手。偏離兩檔就停損。</p></div>
-        <div class="card reveal" data-delay="3"><div style="display:flex;align-items:center;gap:10px"><span class="nav__seal" style="background:var(--celadon)">C</span><h3 style="font-size:19px;margin:0">開盤比昨天低</h3></div><p class="muted" style="margin:10px 0 0;font-size:14.5px">跌破昨低 2415。不要接刀，等反彈到 2415 附近漲不上去再偏空。站回 2415 上方兩檔就認賠。</p></div>
+        <div class="card reveal" data-delay="1"><div style="display:flex;align-items:center;gap:10px"><span class="nav__seal" style="background:var(--cinnabar)">A</span><h3 style="font-size:19px;margin:0">開盤比昨天高</h3></div><p class="muted" style="margin:10px 0 0;font-size:16px">越過昨高 2435。不要急著追，等它回踩 2435 沒跌破再買。跌回平盤 2420 就<span class="term" data-term="stop">停損</span>。</p></div>
+        <div class="card reveal" data-delay="2"><div style="display:flex;align-items:center;gap:10px"><span class="nav__seal" style="background:var(--gold);color:var(--ink)">B</span><h3 style="font-size:19px;margin:0">開盤跟昨天差不多</h3></div><p class="muted" style="margin:10px 0 0;font-size:16px">在 2420 上下 0.5% 內晃。中間不動，等價格走到 2440 或 2400 這兩個邊界再出手。偏離兩檔就停損。</p></div>
+        <div class="card reveal" data-delay="3"><div style="display:flex;align-items:center;gap:10px"><span class="nav__seal" style="background:var(--celadon)">C</span><h3 style="font-size:19px;margin:0">開盤比昨天低</h3></div><p class="muted" style="margin:10px 0 0;font-size:16px">跌破昨低 2415。不要接刀，等反彈到 2415 附近漲不上去再偏空。站回 2415 上方兩檔就認賠。</p></div>
       </div>
-      <p class="muted reveal" style="margin-top:22px;font-size:14px">三個劇本都附停損，是因為系統不預測方向。它只告訴你：到了哪裡該做什麼，錯了在哪裡離開。</p>
+      <p class="muted reveal" style="margin-top:22px;font-size:15.5px">三個劇本都附停損，是因為系統不預測方向。它只告訴你：到了哪裡該做什麼，錯了在哪裡離開。</p>
     </div>
   </section>
 
@@ -207,6 +224,7 @@
       </div>
     </div>
   </section>
+  <section class="next-slot" data-next></section>
 </main>
 
 <footer class="footer">
@@ -223,26 +241,53 @@
 <script>
 (function () {
   var HOTS = [
-    ["① 最上面第一張卡", "標的與五個數字", "你剛剛認識的那五個數字都在這張卡：平盤 2420、中關 2425（昨高昨低的中間）、昨高 2435、昨低 2415。先看這裡，再看其他地方。"],
-    ["② 第二張卡", "J-Box 整理箱", "最近幾天價格來回晃的範圍，像一個箱子：頂部 2445 是壓力、防守 2390 是支撐、中軸 2416 是分界。價格在箱子裡就是「還在整理」。"],
-    ["③ 第三張卡", "均線扣抵預警", "5 日、10 日、20 日、60 日均線現在是往上還是往下。「防壓↓」代表這條均線在往下彎、會變成壓力；「助漲↑」代表往上、會變成支撐。"],
-    ["④ 第四張卡", "CDP 五價", "用昨天的高、低、收算出今天的五條線。CDP 2422.5 是分水嶺，上面 NH 2430、AH 2442.5 是轉強與極限，下面 NL 2410、AL 2402.5 是轉弱與極限。"],
-    ["⑤ 左邊第一欄", "價位", "天梯的樓層號碼，由高排到低。每一個數字都已經對齊到台積電的跳動檔位（5 元一檔），都是真的掛得出去的價格。"],
-    ["⑥ 左邊第三欄", "屬性標籤", "這一階是什麼：壓力、支撐、中關、錨定壓、伏擊 Top1 到 Top3。看到「伏擊」就是今天要等的三個位置之一。"],
-    ["⑦ 左邊最右欄", "關鍵匯流（理由）", "為什麼這一階重要。例如 2440 寫著「AH 強壓、波段前高、樞紐 R2」，代表三個不同的方法都指向同一個價位，所以它特別硬。"],
-    ["⑧ 右邊的分頁", "四個分頁", "K 線撐壓圖、撐壓錦囊妙計與三大劇本、手作作戰筆記、自選觀察名單。第二頁是今天的劇本，第三頁是可以一鍵複製到手機的純文字版。"],
-    ["⑨ 右邊的圖", "K 線撐壓圖", "最近的走勢，疊上均線（黃 5 日、粉 10 日、藍 20 日）、平盤線、昨高昨低線和 J-Box 框。上面三顆按鈕可以切日 K、30 分 K、5 分 K。"],
-    ["⑩ 右上角", "換一檔", "台指期、加權、櫃買一鍵切換。右邊的輸入框可以打任何代號或名稱，例如 2313 或「華通」，按精算就重新跑一次。"]
+    ["① 最上面第一張卡", "標的與五個數字", "你剛剛認識的那五個數字都在這張卡：平盤 2420、中關 2425（昨高昨低的中間）、昨高 2435、昨低 2415。先看這裡，再看其他地方。", [0.5, 4.6, 24, 9.4]],
+    ["② 第二張卡", "J-Box 整理箱", "最近幾天價格來回晃的範圍，像一個箱子：頂部 2445 是壓力、防守 2390 是支撐、中軸 2416 是分界。價格在箱子裡就是「還在整理」。", [24.5, 4.6, 24, 9.4]],
+    ["③ 第三張卡", "均線扣抵預警", "5 日、10 日、20 日、60 日均線現在是往上還是往下。「防壓↓」代表這條均線在往下彎、會變成壓力；「助漲↑」代表往上、會變成支撐。", [48.5, 4.6, 24, 9.4]],
+    ["④ 第四張卡", "CDP 五價", "用昨天的高、低、收算出今天的五條線。CDP 2422.5 是分水嶺，上面 NH 2430、AH 2442.5 是轉強與極限，下面 NL 2410、AL 2402.5 是轉弱與極限。", [72.5, 4.6, 27, 9.4]],
+    ["⑤ 左邊第一欄", "價位", "天梯的樓層號碼，由高排到低。每一個數字都已經對齊到台積電的跳動檔位（5 元一檔），都是真的掛得出去的價格。", [0.5, 14, 13, 52]],
+    ["⑥ 左邊第三欄", "屬性標籤", "這一階是什麼：壓力、支撐、中關、錨定壓、伏擊 Top1 到 Top3。看到「伏擊」就是今天要等的三個位置之一。", [0.5, 24, 21, 34]],
+    ["⑦ 左邊最右欄", "關鍵匯流（理由）", "為什麼這一階重要。例如 2440 寫著「AH 強壓、波段前高、樞紐 R2」，代表三個不同的方法都指向同一個價位，所以它特別硬。", [11, 24, 27, 34]],
+    ["⑧ 右邊的分頁", "四個分頁", "K 線撐壓圖、撐壓錦囊妙計與三大劇本、手作作戰筆記、自選觀察名單。第二頁是今天的劇本，第三頁是可以一鍵複製到手機的純文字版。", [38.6, 14, 45, 7]],
+    ["⑨ 右邊的圖", "K 線撐壓圖", "最近的走勢，疊上均線（黃 5 日、粉 10 日、藍 20 日）、平盤線、昨高昨低線和 J-Box 框。上面三顆按鈕可以切日 K、30 分 K、5 分 K。", [38.6, 20, 60.8, 50]],
+    ["⑩ 右上角", "換一檔", "台指期、加權、櫃買一鍵切換。右邊的輸入框可以打任何代號或名稱，例如 2313 或「華通」，按精算就重新跑一次。", [70, 0.3, 29.5, 5.5]]
   ];
-  var hots = document.querySelectorAll(".hot"), K = document.getElementById("hotK"), T = document.getElementById("hotT"), P = document.getElementById("hotP"), list = document.getElementById("hotList");
-  function go(i) {
+  var N = HOTS.length, AUTO = 7000;
+  var stageEl = document.getElementById("hotStage"), panel = document.getElementById("hotmap");
+  var hots = stageEl.querySelectorAll(".hot"), K = document.getElementById("hotK"), T = document.getElementById("hotT"), P = document.getElementById("hotP");
+  var list = document.getElementById("hotList"), autoBtn = document.getElementById("hotAuto"), fitBtn = document.getElementById("hotFit"), done = document.getElementById("hotDone");
+  var cur = 0, auto = null;
+  panel.style.setProperty("--auto-dur", AUTO + "ms");
+  var zs = KM.zoomStage(stageEl, { onStep: function (d) { stopAuto(); go((cur + d + N) % N); } });
+
+  function paint(i) {
     hots.forEach(function (h) { h.classList.toggle("is-on", +h.dataset.i === i); });
     list.querySelectorAll("button").forEach(function (b) { b.classList.toggle("is-on", +b.dataset.i === i); });
     K.textContent = HOTS[i][0]; T.textContent = HOTS[i][1]; P.textContent = HOTS[i][2];
+    done.hidden = i !== N - 1;
+    if (window.innerWidth <= 600) { var b = list.querySelector("button.is-on"); if (b) list.scrollTo({ left: Math.max(0, b.offsetLeft - 12), behavior: KM.reduceMotion ? "auto" : "smooth" }); }
   }
-  HOTS.forEach(function (h, i) { var b = document.createElement("button"); b.dataset.i = i; b.textContent = (i + 1) + " " + h[1]; b.addEventListener("click", function () { go(i); }); list.appendChild(b); });
-  hots.forEach(function (h) { h.addEventListener("click", function () { go(+h.dataset.i); }); });
-  go(0);
+  function go(i) { cur = i; paint(i); zs.zoomTo(HOTS[i][3]); }
+  function pick(i) { stopAuto(); if (i === cur && zs.state.zoomed) zs.fit(); else go(i); }
+  function stopAuto() { if (auto) { clearInterval(auto); auto = null; } panel.classList.remove("is-auto"); autoBtn.textContent = "▶ 自動帶我看"; }
+  function startAuto() {
+    stopAuto(); panel.classList.add("is-auto"); autoBtn.textContent = "❚❚ 停一下";
+    go(cur >= N - 1 ? 0 : (zs.state.zoomed ? cur : cur));
+    auto = setInterval(function () { if (cur >= N - 1) { stopAuto(); return; } go(cur + 1); }, AUTO);
+  }
+  HOTS.forEach(function (h, i) { var b = document.createElement("button"); b.type = "button"; b.dataset.i = i; b.textContent = (i + 1) + " " + h[1]; b.addEventListener("click", function () { pick(i); }); list.appendChild(b); });
+  hots.forEach(function (h) { h.addEventListener("click", function () { pick(+h.dataset.i); }); });
+  autoBtn.addEventListener("click", function () { if (auto) stopAuto(); else startAuto(); });
+  fitBtn.addEventListener("click", function () { stopAuto(); zs.fit(); });
+  document.getElementById("hotPrev").addEventListener("click", function () { stopAuto(); go((cur - 1 + N) % N); });
+  document.getElementById("hotNext").addEventListener("click", function () { stopAuto(); go((cur + 1) % N); });
+  stageEl.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") { e.preventDefault(); stopAuto(); go((cur + 1) % N); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); stopAuto(); go((cur - 1 + N) % N); }
+  });
+  stageEl.addEventListener("pointerdown", function () { if (auto) stopAuto(); });
+  paint(0);
+  if (window.matchMedia("(max-width: 760px)").matches) go(0);
 })();
 </script>
 </body>

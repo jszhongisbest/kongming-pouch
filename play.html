@@ -54,6 +54,7 @@
       <p class="eyebrow">肆 ・ 互動體驗</p>
       <h1>自己拖一下，<br>看今天落在哪個劇本。</h1>
       <p class="lede">下面所有數字都是 2026-10-21 盤中由引擎實算的結果。第一次玩，先按右邊的「帶我走一遍」，它會自動把現價帶到三個<span class="term" data-term="ambush">伏擊位</span>，每一站告訴你該做什麼。然後換你自己拖，網頁會告訴你此刻該拆哪個錦囊、離哪個伏擊位還有幾檔。</p>
+      <p class="readstrip" data-readstrip></p>
       <div class="seg" id="symSeg" role="group" aria-label="選擇標的" style="margin-top:18px">
         <button data-sym="2330" aria-pressed="true">台積電 2330</button>
         <button data-sym="2313" aria-pressed="false">華通 2313</button>
@@ -122,15 +123,15 @@
         </div>
         <div style="margin-top:20px">
           <span class="zone" id="roZone"></span>
-          <p class="muted" style="margin:10px 0 0;font-size:14.5px" id="roZoneDesc"></p>
+          <p class="muted" style="margin:10px 0 0;font-size:16px" id="roZoneDesc"></p>
         </div>
         <div class="readout">
           <div style="grid-column:1/-1;border-color:rgba(201,162,39,.5)">
             <div class="k">最近的伏擊位</div>
             <div class="v" id="roAmb"></div>
-            <div style="font-size:14px;color:var(--gold-2);margin-top:2px" id="roAmbName"></div>
-            <div class="muted" style="font-size:13.5px" id="roAmbDist"></div>
-            <div class="muted" style="font-size:13.5px" id="roAmbSop"></div>
+            <div style="font-size:15.5px;color:var(--gold-2);margin-top:2px" id="roAmbName"></div>
+            <div class="muted" style="font-size:15px" id="roAmbDist"></div>
+            <div class="muted" style="font-size:15px" id="roAmbSop"></div>
           </div>
           <div><div class="k">上方最近壓力</div><div class="v mono" id="roUp"></div><div class="muted" style="font-size:12.5px" id="roUpTag"></div></div>
           <div><div class="k">下方最近支撐</div><div class="v mono" id="roDn"></div><div class="muted" style="font-size:12.5px" id="roDnTag"></div></div>
@@ -231,10 +232,11 @@
           <div class="NL"><div class="k">NL 轉弱支撐</div><div class="v">—</div></div>
           <div class="AL"><div class="k">AL 極限支撐</div><div class="v">—</div></div>
         </div>
-        <p class="muted" style="margin:16px 0 0;font-size:13.5px">CDP = (H + L + 2C) ÷ 4；AH = CDP + (H − L)；NH = 2CDP − L；NL = 2CDP − H；AL = CDP − (H − L)。引擎會再把結果對齊到跳動檔位後掛上天梯。</p>
+        <p class="muted" style="margin:16px 0 0;font-size:15px">CDP = (H + L + 2C) ÷ 4；AH = CDP + (H − L)；NH = 2CDP − L；NL = 2CDP − H；AL = CDP − (H − L)。引擎會再把結果對齊到跳動檔位後掛上天梯。</p>
       </div>
     </div>
   </section>
+  <section class="next-slot" data-next></section>
 </main>
 
 <footer class="footer">

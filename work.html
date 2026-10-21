@@ -39,6 +39,7 @@
       <p class="eyebrow">壹 ・ 作品頁面</p>
       <h1>一把尺，<br>量出今天的每一階。</h1>
       <p class="lede">「當沖撐壓孔明錦囊」是一套台股<span class="term" data-term="daytrade">當沖</span>的關鍵價位精算系統。輸入一個代號，它去抓行情、算出從漲停到跌停的整座價格<span class="term" data-term="ladder">天梯</span>，標出三個最值得等待的<span class="term" data-term="ambush">伏擊位</span>，然後把開高、開平、開低三個<span class="term" data-term="scenario">劇本</span>連同進場、停損、目標一起寫好。你在桌面視窗看到的，就是天梯、撐壓圖、劇本，和一份可以一鍵複製到手機的純文字筆記。</p>
+      <p class="readstrip" data-readstrip></p>
       <div class="chips" style="margin-top:22px">
         <span class="chip">Python 3</span><span class="chip">pandas ・ NumPy</span><span class="chip">Matplotlib</span><span class="chip">Tkinter 桌面視窗</span><span class="chip">證交所即時行情</span><span class="chip">期交所即時報價</span><span class="chip">Yahoo Finance 歷史 K 線</span>
       </div>
@@ -50,36 +51,41 @@
     <div class="wrap">
       <p class="eyebrow reveal">畫面導覽 ・ 2026-10-21 盤中</p>
       <h2 class="sec-title reveal">六步，<em>走一遍</em>桌面版。</h2>
-      <p class="lede reveal" data-delay="1">以下是桌面版的真實畫面。朱紅框是每一步要看的地方，會自動輪播，也可以點右側步驟或用鍵盤左右鍵。如果你是第一次看，建議先到<a href="guide.html" style="color:var(--cinnabar);font-weight:700;text-decoration:underline">「第一次看」</a>，那裡會一塊一塊解釋畫面。</p>
-      <div class="tour reveal" data-tour data-dur="5200" tabindex="0" aria-label="畫面導覽" style="margin-top:36px">
-        <div class="tour__stage">
-          <img src="assets/img/shot_01_main_2330.webp" alt="主畫面：決策彩帶、價格天梯與日 K 撐壓圖" data-step="main" class="is-on" width="1920" height="1129">
-          <img src="assets/img/shot_03_chart_5m.webp" alt="5 分 K 撐壓圖" data-step="chart" width="1920" height="1129" loading="lazy">
-          <img src="assets/img/shot_04_playbook.webp" alt="撐壓錦囊妙計與三大劇本分頁" data-step="playbook" width="1920" height="1129" loading="lazy">
-          <img src="assets/img/shot_05_notes.webp" alt="手作作戰筆記分頁" data-step="notes" width="1920" height="1129" loading="lazy">
-          <img src="assets/img/shot_09_main_TXF.webp" alt="切換到台指期的主畫面" data-step="txf" width="1920" height="1129" loading="lazy">
-          <div class="tour__spot" aria-hidden="true"><span class="seal seal--inline"></span></div>
+      <p class="lede reveal" data-delay="1">以下是桌面版的真實畫面。每一步會自動放大到朱紅框的位置，字和桌面版一樣大；會自動輪播，也可以點下面的步驟、按畫面兩側的箭頭，或用鍵盤左右鍵。想看整個畫面按「看全圖」，想看更大按「放大看」。第一次看的話，建議先到<a href="guide.html" style="color:var(--cinnabar);font-weight:700;text-decoration:underline">「第一次看」</a>，那裡會一塊一塊解釋畫面。</p>
+    </div>
+    <div class="tour reveal" data-tour data-zoom data-dur="6500" tabindex="0" aria-label="畫面導覽" style="margin-top:36px">
+      <div class="wrap--wide">
+        <div class="zstage" aria-label="桌面版畫面，可放大與拖曳">
+          <div class="zstage__cam">
+            <img src="assets/img/shot_01_main_2330.webp" alt="主畫面：決策彩帶、價格天梯與日 K 撐壓圖" data-step="main" class="is-on" width="1920" height="1129">
+            <img src="assets/img/shot_03_chart_5m.webp" alt="5 分 K 撐壓圖" data-step="chart" width="1920" height="1129" loading="lazy">
+            <img src="assets/img/shot_04_playbook.webp" alt="撐壓錦囊妙計與三大劇本分頁" data-step="playbook" width="1920" height="1129" loading="lazy">
+            <img src="assets/img/shot_05_notes.webp" alt="手作作戰筆記分頁" data-step="notes" width="1920" height="1129" loading="lazy">
+            <img src="assets/img/shot_09_main_TXF.webp" alt="切換到台指期的主畫面" data-step="txf" width="1920" height="1129" loading="lazy">
+            <div class="tour__spot" aria-hidden="true"><span class="seal seal--inline"></span></div>
+          </div>
         </div>
+      </div>
+      <div class="wrap">
         <div class="tour__steps" role="tablist">
-          <button class="tour__step" role="tab" data-img="main" data-spot="0.5,4.6,99,9.4" data-seal="決策">
+          <button type="button" class="tour__step" role="tab" data-img="main" data-spot="0.5,4.6,99,9.4" data-zoom="0.5,3,66,13" data-seal="決策">
             <b>01</b><div><h4>決策彩帶</h4><p>一眼看完今天的四張卡：平盤與昨高昨低、J-Box 箱體、均線扣抵預警、CDP 五價。</p><div class="tour__bar"><i></i></div></div>
           </button>
-          <button class="tour__step" role="tab" data-img="main" data-spot="0.5,14.2,37.6,82.4" data-seal="天梯">
+          <button type="button" class="tour__step" role="tab" data-img="main" data-spot="0.5,14.2,37.6,82.4" data-zoom="0.5,14,37.6,50" data-seal="天梯">
             <b>02</b><div><h4>價格天梯</h4><p>從漲停排到跌停，每一階標出性質與匯流理由；三個伏擊位用金色標記，一眼就找得到。</p><div class="tour__bar"><i></i></div></div>
           </button>
-          <button class="tour__step" role="tab" data-img="chart" data-spot="38.6,14.4,60.8,82.6" data-seal="撐壓">
+          <button type="button" class="tour__step" role="tab" data-img="chart" data-spot="38.6,14.4,60.8,82.6" data-zoom="38.6,14.4,60.8,56" data-seal="撐壓">
             <b>03</b><div><h4>K 線撐壓圖</h4><p>日 K、30 分 K、5 分 K 一鍵切換，均線、平盤、昨高昨低、J-Box 都畫在同一張圖上。</p><div class="tour__bar"><i></i></div></div>
           </button>
-          <button class="tour__step" role="tab" data-img="playbook" data-spot="38.6,14.4,60.8,82.6" data-seal="錦囊">
+          <button type="button" class="tour__step" role="tab" data-img="playbook" data-spot="38.6,14.4,60.8,82.6" data-zoom="38.6,14.4,60.8,56" data-seal="錦囊">
             <b>04</b><div><h4>錦囊妙計與三大劇本</h4><p>主觀預判、三大伏擊位的理由與 SOP、劇本 A/B/C 的進場停損目標，一頁備齊。</p><div class="tour__bar"><i></i></div></div>
           </button>
-          <button class="tour__step" role="tab" data-img="notes" data-spot="38.6,14.4,60.8,82.6" data-seal="筆記">
+          <button type="button" class="tour__step" role="tab" data-img="notes" data-spot="38.6,14.4,60.8,82.6" data-zoom="38.6,14.4,60.8,56" data-seal="筆記">
             <b>05</b><div><h4>手作作戰筆記</h4><p>整份分析排成雙欄純文字，一鍵複製就能貼到 LINE 或筆記本，盤中拿手機也看得清楚。</p><div class="tour__bar"><i></i></div></div>
           </button>
-          <button class="tour__step" role="tab" data-img="txf" data-spot="78.4,0.4,21.2,4" data-seal="切換">
+          <button type="button" class="tour__step" role="tab" data-img="txf" data-spot="78.4,0.4,21.2,4" data-zoom="62,0.3,37.5,6" data-seal="切換">
             <b>06</b><div><h4>任何標的，一秒切換</h4><p>台指期、加權、櫃買一鍵到位；輸入任何個股代號或名稱也行，2,888 檔對照庫即時查詢。</p><div class="tour__bar"><i></i></div></div>
           </button>
-          <div class="tour__ctrl"><button data-dir="-1" aria-label="上一步">‹</button><button data-dir="1" aria-label="下一步">›</button></div>
         </div>
       </div>
     </div>
@@ -94,7 +100,7 @@
         <!-- Tick -->
         <div class="card reveal" data-delay="1">
           <h3 style="font-size:20px">一、跳動檔位對齊</h3>
-          <p class="muted" style="font-size:14.5px">證交所的六級<span class="term" data-term="tick">檔位規則</span>。每一個算出來的價位都先對齊到檔位，才會掛上天梯。</p>
+          <p class="muted" style="font-size:16px">證交所的六級<span class="term" data-term="tick">檔位規則</span>。每一個算出來的價位都先對齊到檔位，才會掛上天梯。</p>
           <figure class="figure">
             <svg viewBox="0 0 320 200" role="img" aria-label="六級跳動檔位階梯圖">
               <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#cfc6b3">
@@ -113,7 +119,7 @@
         <!-- CDP -->
         <div class="card reveal" data-delay="2">
           <h3 style="font-size:20px">二、CDP 五價樞紐</h3>
-          <p class="muted" style="font-size:14.5px">用昨天的高、低、收算出今天的五條線。以台積電 2026-10-21 為例。</p>
+          <p class="muted" style="font-size:16px">用昨天的高、低、收算出今天的五條線。以台積電 2026-10-21 為例。</p>
           <figure class="figure">
             <svg viewBox="0 0 320 200" role="img" aria-label="CDP 五價示意：AH 2442.5、NH 2430、CDP 2422.5、NL 2410、AL 2402.5">
               <g font-family="IBM Plex Mono, monospace" font-size="12">
@@ -136,27 +142,27 @@
         <!-- 伏擊 -->
         <div class="card reveal" data-delay="3">
           <h3 style="font-size:20px">三、三大伏擊位</h3>
-          <p class="muted" style="font-size:14.5px">把所有撐壓疊在一起，共振最強的三個點。這是台積電今天的三封錦囊：</p>
+          <p class="muted" style="font-size:16px">把所有撐壓疊在一起，共振最強的三個點。這是台積電今天的三封錦囊：</p>
           <div style="display:flex;flex-direction:column;gap:10px;margin-top:6px">
             <div class="card card--accent" style="--accent:#d6463a;padding:14px 16px 14px 20px;box-shadow:none">
               <div class="mono" style="font-size:20px;font-weight:600;color:var(--paper)">2440 <span style="font-size:12px;color:var(--mute-2)">+0.83%</span></div>
               <div style="font-family:var(--serif);font-size:15px">上方極限獵殺位</div>
-              <div class="muted" style="font-size:13px;line-height:1.5">樞紐 R2 ・ 三關上關 ・ J 箱頂 ・ AH 強壓。衝高遇阻轉弱做空；站上 2450 放棄。</div>
+              <div class="muted" style="font-size:16px;line-height:1.6">樞紐 R2 ・ 三關上關 ・ J 箱頂 ・ AH 強壓。衝高遇阻轉弱做空；站上 2450 放棄。</div>
             </div>
             <div class="card card--accent" style="--accent:#35926e;padding:14px 16px 14px 20px;box-shadow:none">
               <div class="mono" style="font-size:20px;font-weight:600;color:var(--paper)">2400 <span style="font-size:12px;color:var(--mute-2)">−0.83%</span></div>
               <div style="font-family:var(--serif);font-size:15px">下方黃金吸籌位</div>
-              <div class="muted" style="font-size:13px;line-height:1.5">AL 強支 ・ 整數關 ・ J 箱底 ・ 樞紐 S3。回踩量縮收腳做多；破 2390 不接刀。</div>
+              <div class="muted" style="font-size:16px;line-height:1.6">AL 強支 ・ 整數關 ・ J 箱底 ・ 樞紐 S3。回踩量縮收腳做多；破 2390 不接刀。</div>
             </div>
             <div class="card card--accent" style="--accent:#bd9620;padding:14px 16px 14px 20px;box-shadow:none">
               <div class="mono" style="font-size:20px;font-weight:600;color:var(--paper)">2420 <span style="font-size:12px;color:var(--mute-2)">0.00%</span></div>
               <div style="font-family:var(--serif);font-size:15px">多空決戰生死嶺</div>
-              <div class="muted" style="font-size:13px;line-height:1.5">平盤 ・ CDP 分水 ・ 季線 ・ 大量成本。站穩偏多、跌破轉弱，偏離 2 檔手起刀落。</div>
+              <div class="muted" style="font-size:16px;line-height:1.6">平盤 ・ CDP 分水 ・ 季線 ・ 大量成本。站穩偏多、跌破轉弱，偏離 2 檔手起刀落。</div>
             </div>
           </div>
         </div>
       </div>
-      <p class="muted reveal" style="margin-top:24px;font-size:14px">除了這三個規則，引擎還疊上樞紐 R1 到 S3、5 / 10 / 20 / 60 / 120 日均線的扣抵方向、J-Box 整理箱、爆量換手成本、布林極值與波段前高前低，每個價位依匯流數量計算「共振強度」，再排成天梯。</p>
+      <p class="muted reveal" style="margin-top:24px;font-size:15.5px">除了這三個規則，引擎還疊上樞紐 R1 到 S3、5 / 10 / 20 / 60 / 120 日均線的扣抵方向、J-Box 整理箱、爆量換手成本、布林極值與波段前高前低，每個價位依匯流數量計算「共振強度」，再排成天梯。</p>
     </div>
   </section>
 
@@ -192,6 +198,7 @@
       </div>
     </div>
   </section>
+  <section class="next-slot" data-next></section>
 </main>
 
 <footer class="footer">
