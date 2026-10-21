@@ -411,6 +411,7 @@ p { margin: 0 0 1em; }
 .table th, .table td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
 .table th { font-weight: 700; font-size: 12.5px; letter-spacing: 0.12em; color: var(--mute); }
 .table--compact th, .table--compact td { padding: 8px 10px; font-size: 13.5px; }
+.table--compact td { white-space: normal; line-height: 1.45; }
 .table--compact tbody th { letter-spacing: 0.04em; font-size: 12.5px; }
 .table td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 .table .ok { color: var(--celadon); font-weight: 700; }
