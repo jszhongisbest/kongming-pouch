@@ -46,7 +46,7 @@
       <div class="grid grid--2" style="align-items:start">
         <div>
           <p class="eyebrow reveal">驗證時間軸 ・ 2026-10-21（三）</p>
-          <h2 class="sec-title reveal">從開程式到截完圖，<em>三分鐘</em>。</h2>
+          <h2 class="sec-title reveal" style="font-size:clamp(26px,3.2vw,38px)">從開程式到截完圖，<em>三分鐘</em>。</h2>
           <div class="timeline reveal" data-delay="1" style="margin-top:28px">
             <div class="tl tl--done"><div class="tl__time">11:00:20</div><h4>執行引擎：台積電 2330</h4><p>抓取日 K、30 分 K、5 分 K 與盤中即時價，產出 19 階天梯、三大伏擊位、三個劇本。耗時 4.8 秒。</p></div>
             <div class="tl tl--done"><div class="tl__time">11:00:25</div><h4>執行引擎：華通 2313</h4><p>20 階天梯。耗時 1.6 秒（名稱對照庫命中，不需額外查詢）。</p></div>
@@ -61,12 +61,16 @@
             <h3 style="font-size:20px">公式重算驗證</h3>
             <p class="muted" style="font-size:14px">CDP = (H + L + 2C) ÷ 4，其餘四價由 CDP 與昨日振幅推得。</p>
             <div class="table-wrap">
-              <table class="table">
-                <thead><tr><th>標的</th><th>H / L / C</th><th>CDP</th><th>AH</th><th>NH</th><th>NL</th><th>AL</th><th></th></tr></thead>
+              <table class="table table--compact">
+                <thead><tr><th></th><th>台積電 2330</th><th>華通 2313</th><th>台指期 TXF</th></tr></thead>
                 <tbody>
-                  <tr><td>2330</td><td class="num">2435 / 2415 / 2420</td><td class="num">2422.5</td><td class="num">2442.5</td><td class="num">2430</td><td class="num">2410</td><td class="num">2402.5</td><td class="ok">一致</td></tr>
-                  <tr><td>2313</td><td class="num">266 / 243.5 / 243.5</td><td class="num">249.12</td><td class="num">271.62</td><td class="num">254.75</td><td class="num">232.25</td><td class="num">226.62</td><td class="ok">一致</td></tr>
-                  <tr><td>TXF</td><td class="num">47450 / 47085 / 47179</td><td class="num">47223.2</td><td class="num">47588.2</td><td class="num">47361.5</td><td class="num">46996.5</td><td class="num">46858.2</td><td class="ok">一致</td></tr>
+                  <tr><th>昨高 / 昨低 / 昨收</th><td class="num">2435 / 2415 / 2420</td><td class="num">266 / 243.5 / 243.5</td><td class="num">47450 / 47085 / 47179</td></tr>
+                  <tr><th>AH</th><td class="num">2442.5</td><td class="num">271.62</td><td class="num">47588.2</td></tr>
+                  <tr><th>NH</th><td class="num">2430</td><td class="num">254.75</td><td class="num">47361.5</td></tr>
+                  <tr><th>CDP</th><td class="num">2422.5</td><td class="num">249.12</td><td class="num">47223.2</td></tr>
+                  <tr><th>NL</th><td class="num">2410</td><td class="num">232.25</td><td class="num">46996.5</td></tr>
+                  <tr><th>AL</th><td class="num">2402.5</td><td class="num">226.62</td><td class="num">46858.2</td></tr>
+                  <tr><th>與引擎輸出比對</th><td class="ok">✓ 一致</td><td class="ok">✓ 一致</td><td class="ok">✓ 一致</td></tr>
                 </tbody>
               </table>
             </div>
