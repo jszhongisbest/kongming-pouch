@@ -132,6 +132,7 @@ p { margin: 0 0 1em; }
   transition: transform 0.3s var(--ease), background 0.3s;
 }
 .nav__links .nav__cta::after { display: none; }
+.nav__links .nav__cta[aria-current="page"] { color: var(--ink); background: var(--gold-2); }
 .nav__links .nav__cta:hover { background: var(--gold-2); transform: translateY(-1px); color: var(--ink); }
 .nav__burger { display: none; width: 44px; height: 44px; border: 0; background: transparent; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
 .nav__burger span { width: 22px; height: 2px; background: var(--paper); transition: transform 0.3s var(--ease), opacity 0.2s; }
@@ -140,9 +141,15 @@ p { margin: 0 0 1em; }
 @media (max-width: 820px) {
   .nav__burger { display: flex; }
   .nav__links {
-    position: fixed; inset: var(--nav-h) 0 0 0; background: var(--ink); flex-direction: column; justify-content: center;
-    gap: 28px; font-family: var(--serif); font-size: 28px; transform: translateX(100%); transition: transform 0.4s var(--ease);
+    position: absolute; top: 100%; left: 0; right: 0; height: calc(100vh - var(--nav-h)); height: calc(100dvh - var(--nav-h));
+    background: var(--ink); flex-direction: column; justify-content: center; justify-content: safe center; align-items: center;
+    gap: 26px; padding: 28px 0; overflow-y: auto; font-family: var(--serif); font-size: 28px;
+    transform: translateX(100%); transition: transform 0.4s var(--ease); border-top: 1px solid var(--line-ink);
   }
+  .nav__links a { color: var(--paper); }
+  .nav__links a::after { display: none; }
+  .nav__links a[aria-current="page"] { color: var(--gold-2); }
+  .nav__links .nav__cta, .nav__links .nav__cta[aria-current="page"] { color: var(--ink); font-size: 22px; padding: 12px 28px; margin-top: 8px; }
   .nav-open .nav__links { transform: none; }
   .nav-open .nav__burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-open .nav__burger span:nth-child(2) { opacity: 0; }
@@ -251,12 +258,13 @@ p { margin: 0 0 1em; }
 .pouch-card__front .hint { margin-top: auto; font-size: 13px; letter-spacing: 0.2em; color: var(--gold); }
 .pouch-card__back {
   transform: rotateY(180deg); background: #fff8ea; color: var(--text); border-top: 6px solid var(--accent, var(--cinnabar));
-  gap: 10px; overflow: auto;
+  gap: 12px; overflow: visible;
 }
-.pouch-card__back h3 { font-size: 22px; margin: 0; display: flex; gap: 10px; align-items: center; }
+.pouch-card.open .pouch-card__back { position: relative; inset: auto; min-height: inherit; }
+.pouch-card__back h3, .sec--ink .pouch-card__back h3 { font-size: 22px; margin: 0; display: flex; gap: 10px; align-items: center; color: var(--text); }
 .pouch-card__back .kv { display: grid; grid-template-columns: 64px 1fr; gap: 6px 12px; font-size: 15.5px; line-height: 1.7; }
 .pouch-card__back .kv b { color: var(--accent, var(--cinnabar)); font-family: var(--serif); }
-.pouch-card__back .close { margin-top: auto; align-self: flex-end; }
+.pouch-card__back .close { margin-top: auto; align-self: flex-end; color: var(--text); }
 
 /* ---------- 天梯 ---------- */
 .ladder { display: flex; flex-direction: column; gap: 4px; font-family: var(--mono); font-variant-numeric: tabular-nums; }

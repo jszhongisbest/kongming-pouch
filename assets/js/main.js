@@ -441,7 +441,8 @@
         const open = document.body.classList.toggle("nav-open");
         burger.setAttribute("aria-expanded", String(open));
       });
-      document.querySelectorAll(".nav__links a").forEach((a) => a.addEventListener("click", () => document.body.classList.remove("nav-open")));
+      document.querySelectorAll(".nav__links a").forEach((a) => a.addEventListener("click", () => { document.body.classList.remove("nav-open"); burger.setAttribute("aria-expanded", "false"); }));
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && document.body.classList.contains("nav-open")) { document.body.classList.remove("nav-open"); burger.setAttribute("aria-expanded", "false"); burger.focus(); } });
     }
   }
 
